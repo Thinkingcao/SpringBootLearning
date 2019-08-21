@@ -1,0 +1,18 @@
+### 开发环境
+## 端口配置
+server:
+  port: 8080
+spring:
+  datasource: ##数据库配置
+    url: jdbc:mysql://localhost:3306/springboot-data-jpa?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:  
+    database: MYSQL  ##数据库类型
+    show-sql: true
+    hibernate:
+      ddl-auto: update    
+    properties:
+      hibernate: 
+      dialect: org.hibernate.dialect.MySQL5Dialect
