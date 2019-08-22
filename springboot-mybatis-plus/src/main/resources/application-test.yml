@@ -15,5 +15,5 @@ logback:
 
 logging:
   level:
-    com.fengwenyi.mpdemo.service.impl: trace
-    com.fengwenyi.mpdemo..controller: trace
+    com.thinkingcao.springbootmybatisplus.service.impl: trace
+    com.thinkingcao.springbootmybatisplus..controller: trace
