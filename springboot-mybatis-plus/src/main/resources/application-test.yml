@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mybatis-plus?useSSL=true
+    url: jdbc:mysql://localhost:3306/springboot-mybatis-plus?useSSL=true
     username: root
     password: xfsy2017
 
