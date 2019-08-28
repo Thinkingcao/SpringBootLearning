@@ -1,0 +1,14 @@
+#\u56FD\u9645\u5316i18n\u652F\u6301
+spring:
+  messages:
+    basename: i18n.login
+    encoding: UTF-8
+    fallback-to-system-locale: false
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+  thymeleaf:
+    cache: false
+server:
+  port: 8888
