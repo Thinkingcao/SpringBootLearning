@@ -1,2 +1,7 @@
 server:
   port: 8998
+
+
+logging:
+  level:
+    com.thinkingcao.demo.easypoi: debug

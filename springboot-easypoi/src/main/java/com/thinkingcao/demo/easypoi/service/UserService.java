@@ -1,12 +1,11 @@
 package com.thinkingcao.demo.easypoi.service;
 
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.google.common.collect.Lists;
 import com.thinkingcao.demo.easypoi.entity.User;
+import com.thinkingcao.demo.easypoi.utils.DateUtils;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -24,18 +23,17 @@ public class UserService {
 		user.setId(10);
 		user.setName("张三");
 		user.setSex("男");
-		user.setBirthday(new Date().toString());
+		user.setBirthday(DateUtils.parseDate("2018-12-13"));
 		User user1 = new User();
 		user1.setId(20);
 		user1.setName("李四");
 		user1.setSex("男");
-		user1.setBirthday(new Date().toString());
-		user.setBirthday(new Date().toString());
+		user1.setBirthday(DateUtils.parseDate("2018-12-11"));
 		User user2 = new User();
 		user2.setId(20);
 		user2.setName("王五");
 		user2.setSex("男");
-		user2.setBirthday(new Date().toString());
+		user2.setBirthday(DateUtils.parseDate("2018-12-12"));
 		list.add(user);
 		list.add(user1);
 		list.add(user2);

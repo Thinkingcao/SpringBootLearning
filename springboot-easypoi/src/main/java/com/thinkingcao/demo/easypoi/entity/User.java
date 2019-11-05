@@ -1,14 +1,13 @@
 package com.thinkingcao.demo.easypoi.entity;
 
-import java.util.Date;
-
-import javax.validation.constraints.NotBlank;
-
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelTarget;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 /**
  * <pre>
@@ -32,7 +31,7 @@ public class User implements java.io.Serializable{
 	private String sex;
 
 	@Excel(name = "生日", exportFormat = "yyyy-MM-dd",  orderNum = "2", width=30)
-	private String birthday;
+	private Date birthday;
 
 
 
