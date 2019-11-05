@@ -1,0 +1,68 @@
+#端口配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+#设置提供的服务名
+spring:
+  application:
+    name: mybatisplus
+  #mysql数据源配置
+  datasource:
+    name: mybatisplus
+    url: jdbc:mysql://localhost:3306/mybatis-plus?serverTimezone=UTC&characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+    #druid连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+#mybatis plus
+mybatis-plus:
+  # 加载mapper.xml文件： classpath:/mapper/*.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 实体类别名包扫描路径，通过该属性可以给包中的类注册别名
+  typeAliasesPackage: com.thinkingcao.springbootmybatisplus.entity
+  # 该配置请和 typeAliasesPackage 一起使用，如果配置了该属性，则仅仅会扫描路径下以该类作为父类的域对象 。
+  type-aliases-super-type: java.lang.Object
+  global-config:
+    #主键类型 0:数据库ID自增, 1:用户输入ID,2:全局唯一ID (数字类型唯一ID), 3:全局唯一ID UUID
+    id-type: 0
+    #字段策略(拼接sql时用于判断属性值是否拼接) 0:忽略判断,1:非NULL判断,2:非空判断
+    field-strategy: 2
+    #驼峰下划线转换含查询column及返回column(column下划线命名create_time，返回java实体是驼峰命名createTime，开启后自动转换否则保留原样)
+    db-column-underline: true
+    #是否动态刷新mapper
+    refresh-mapper: false
+    #数据库大写命名下划线转换
+    apital-mode: true
+  #控制台打印sql语句
+  configuration:
+    #这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      # 驼峰下划线转换
+    map-underscore-to-camel-case: true
+      # 配置的缓存的全局开关
+    cache-enabled: true
+      # 延时加载的开关
+    lazy-loading-enabled: true
+      # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+    multiple-result-sets-enabled: true
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100
+
+#debug: true
