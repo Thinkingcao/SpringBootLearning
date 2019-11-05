@@ -1,0 +1,10 @@
+2019-09-09 17:06:05.107  INFO 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : Starting SpringbootLogbackApplicationTests on DESKTOP-JBFTEEM with PID 25432 (started by jiuyv in F:\IDEA_Project\SpringBootLearning\springboot-logback)
+2019-09-09 17:06:05.108 DEBUG 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2019-09-09 17:06:05.109  INFO 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : No active profile set, falling back to default profiles: default
+2019-09-09 17:06:05.147  INFO 25432 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@316bcf94: startup date [Mon Sep 09 17:06:05 CST 2019]; root of context hierarchy
+2019-09-09 17:06:05.918  INFO 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : Started SpringbootLogbackApplicationTests in 1.195 seconds (JVM running for 1.929)
+2019-09-09 17:06:05.923 DEBUG 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : ---> debug start! <------
+2019-09-09 17:06:05.923  INFO 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : ---> info start! <------
+2019-09-09 17:06:05.923  WARN 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : ---> warn start! <------
+2019-09-09 17:06:05.923 ERROR 25432 --- [main] c.t.s.SpringbootLogbackApplicationTests  : ---> error start! <------
+2019-09-09 17:06:05.926  INFO 25432 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@316bcf94: startup date [Mon Sep 09 17:06:05 CST 2019]; root of context hierarchy
