@@ -1,0 +1,13 @@
+server:
+  port: 7001  
+spring:
+  dubbo:
+    application:
+      name: springboot-dubbo-consumer
+      id: springboot-dubbo-consumer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    server: true
+    protocol:
+      name: dubbo
+      port: 20880

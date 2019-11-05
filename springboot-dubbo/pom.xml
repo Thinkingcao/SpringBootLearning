@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.1.RELEASE</version>
+	</parent>
+	<groupId>com.thinkingcao</groupId>
+	<artifactId>springboot-dubbo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Thinkingcao</name>
+	<description>SpringBoot+Dubbo搭建简单的分布式服务</description>
+	<modules>
+		<module>springboot-dubbo-api</module>
+		<module>springboot-dubbo-provider</module>
+		<module>springboot-dubbo-consumer</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<boot.dubbo.version>2.0.0</boot.dubbo.version>
+		<zkclient.version>0.10</zkclient.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- 引入dubbo的依赖 -->
+			<dependency>
+				<groupId>com.alibaba.spring.boot</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>${boot.dubbo.version}</version>
+			</dependency>
+			<!-- 引入zookeeper的依赖 -->
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
