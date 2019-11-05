@@ -1,0 +1,7 @@
+##默认环境(主配置文件)
+server:
+  port: 8080
+spring:
+  profiles:
+    ## 通过active激活环境
+    active: '@profileActive@'
