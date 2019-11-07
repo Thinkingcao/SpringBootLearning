@@ -1,11 +1,10 @@
 package com.thingingcao.jpa.service;
  
+import com.thingingcao.jpa.dao.StudentDao;
+import com.thingingcao.jpa.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.thingingcao.jpa.dao.StudentDao;
-import com.thingingcao.jpa.entity.Student;
 
 import java.util.List;
  

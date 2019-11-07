@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springboot-jsp" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springboot-i18n/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-logback/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatisplus/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatisplus-autoGenerator/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-easypoi/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mapstruct/pom.xml" />
+        <option value="$PROJECT_DIR$/springbooot-https/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-https/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

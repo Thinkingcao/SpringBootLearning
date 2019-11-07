@@ -1,14 +1,12 @@
 package com.thinkingcao.modules.controller;
 
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.thinkingcao.modules.mapper.MemeberMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.thinkingcao.modules.mapper.MemeberMapper;
+import javax.annotation.Resource;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/test")

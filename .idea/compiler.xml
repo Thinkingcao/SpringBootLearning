@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-easypoi" />
+        <module name="springboot-https" />
+        <module name="springboot-i18n" />
+        <module name="springboot-jsp" />
+        <module name="springboot-logback" />
+        <module name="springboot-mapstruct" />
+        <module name="springboot-mybatisplus" />
+        <module name="springboot-mybatisplus-autoGenerator" />
+        <module name="springboot-profile" />
+        <module name="springboot-shiro" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springbooot-https (1)" target="1.8" />
+      <module name="springboot-easypoi" target="1.8" />
+      <module name="springboot-fastjson" target="1.8" />
+      <module name="springboot-https" target="1.8" />
+      <module name="springboot-https (2)" target="1.8" />
+      <module name="springboot-i18n" target="1.8" />
+      <module name="springboot-jsp" target="1.8" />
+      <module name="springboot-logback" target="1.8" />
+      <module name="springboot-mapstruct" target="1.8" />
+      <module name="springboot-mybatisplus" target="1.8" />
+      <module name="springboot-mybatisplus-autoGenerator" target="1.8" />
+      <module name="springboot-profile" target="1.8" />
+      <module name="springboot-shiro" target="1.8" />
+      <module name="springboot_mybatisplus" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springbooot-https (1)" options="" />
+      <module name="springboot-easypoi" options="" />
+      <module name="springboot-fastjson" options="" />
+      <module name="springboot-https" options="" />
+      <module name="springboot-https (2)" options="" />
+      <module name="springboot-i18n" options="" />
+      <module name="springboot-jsp" options="" />
+      <module name="springboot-logback" options="" />
+      <module name="springboot-mapstruct" options="" />
+      <module name="springboot-mybatisplus" options="" />
+      <module name="springboot-mybatisplus-autoGenerator" options="" />
+      <module name="springboot-profile" options="" />
+      <module name="springboot-shiro" options="" />
+      <module name="springboot_mybatisplus" options="" />
+    </option>
+  </component>
+</project>

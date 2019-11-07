@@ -1,14 +1,12 @@
 package com.thingingcao.jpa.entity;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Date;
 
 @Entity(name = "tb_student")
 public class Student {

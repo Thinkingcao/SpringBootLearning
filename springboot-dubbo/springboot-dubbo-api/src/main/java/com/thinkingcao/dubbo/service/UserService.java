@@ -1,10 +1,9 @@
 package com.thinkingcao.dubbo.service;
 
-import java.util.List;
+import com.thinkingcao.dubbo.entity.UserDO;
 
 import javax.validation.constraints.NotBlank;
-
-import com.thinkingcao.dubbo.entity.UserDO;
+import java.util.List;
 
 /**
  * <p>

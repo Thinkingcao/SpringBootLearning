@@ -1,0 +1,17 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /springboot-jsp
+
+spring:
+  mvc:
+    view:
+      #jsp 文件存放的路径
+      prefix: /WEB-INF/view/
+      #文件后缀名
+      suffix: .jsp
+
+  ##关闭默认模板引擎
+  thymeleaf:
+    cache: false
+    enable-spring-el-compiler: false

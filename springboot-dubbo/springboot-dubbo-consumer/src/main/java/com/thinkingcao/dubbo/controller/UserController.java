@@ -1,15 +1,14 @@
 package com.thinkingcao.dubbo.controller;
 
-import java.util.List;
-
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.thinkingcao.dubbo.entity.UserDO;
+import com.thinkingcao.dubbo.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.thinkingcao.dubbo.entity.UserDO;
-import com.thinkingcao.dubbo.service.UserService;
+import java.util.List;
 
 /**
  * <pr>

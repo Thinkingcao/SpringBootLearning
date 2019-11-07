@@ -1,7 +1,5 @@
 package com.thingingcao.jpa.common;
 
-import java.util.List;
-
 public class ResponseResult {
 	private Integer state;
 	private String msg;
