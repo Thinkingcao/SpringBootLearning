@@ -1,0 +1,7 @@
+
+
+#HTML页面配置
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
