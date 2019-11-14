@@ -7,7 +7,9 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 /**
- * Created by fangzhipeng on 2017/4/20.
+ * @desc: AccountMapper接口层
+ * @auth: cao_wencao
+ * @date: 2019/11/14 11:43
  */
 @Mapper
 public interface AccountMapper {

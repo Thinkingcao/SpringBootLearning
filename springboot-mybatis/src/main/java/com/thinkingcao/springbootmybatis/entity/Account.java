@@ -6,7 +6,7 @@ import lombok.ToString;
 
 /**
  * <pre>
- *
+ * @Desc: 实体层
  * @auther: cao_wencao
  * @date: 2019/2/20 13:34
  * </pre>
