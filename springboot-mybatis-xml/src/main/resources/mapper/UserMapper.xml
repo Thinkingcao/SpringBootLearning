@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkingcao.springboot.mapper.UserMapper">
+
+    <!--查询所有用户-->
+    <select id="getAllUser" resultType="User">
+        select * from user
+    </select>
+
+    <!--添加用户-->
+    <insert id="InsertUser" parameterType="integer">
+        insert into user(name,gender,age,address,qq,email) values (#{name},#{gender},#{age},#{address},#{qq},#{email})
+    </insert>
+
+    <!--删除用户-->
+    <delete id="delUserById" parameterType="integer">
+       delete from user where id=#{id}
+    </delete>
+
+    <!--根据id查询用户-->
+    <select id="getUserById" resultType="User">
+        select * from user where id=#{id}
+    </select>
+
+    <!--更改用户信息-->
+    <update id="UpdateUser" parameterType="integer">
+        update user set gender=#{gender},age=#{age},address=#{address},qq=#{qq},email=#{email} where name=#{name}
+    </update>
+
+</mapper>

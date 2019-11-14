@@ -1,0 +1,24 @@
+#\u7AEF\u53E3\u914D\u7F6E
+server:
+  port: 8080
+
+#\u6570\u636E\u5E93\u8FDE\u63A5\u914D\u7F6E
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis-xml
+    data-username: root
+    data-password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#Mybatis\u914D\u7F6E
+mybatis:
+  config-location: classpath:config/mybatis-config.xml  #mybatis\u914D\u7F6E\u6587\u4EF6\u6240\u5728\u8DEF\u5F84
+  mapper-locations: classpath:mapper/*.xml       #\u6240\u6709\u7684mapper\u6620\u5C04\u6587\u4EF6
+  type-aliases-package: com.thinkingcao.springboot.entity #\u5B9A\u4E49\u6240\u6709\u64CD\u4F5C\u7C7B\u7684\u522B\u540D\u6240\u5728\u5305
+
+#\u65E5\u5FD7\u914D\u7F6E
+logging:
+  level:
+    com.thinkingcao.springboot.mapper: debug   #\u6253\u5370mybatis\u7684SQL
+    org.springframework.web: DEBUG   #Spring\u6846\u67B6\u4E2D\u7684\u65E5\u5FD7\u7EA7\u522B
