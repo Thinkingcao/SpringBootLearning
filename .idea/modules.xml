@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" filepath="$PROJECT_DIR$/springboot-jsp/springboot-jsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-logback/springboot-logback.iml" filepath="$PROJECT_DIR$/springboot-logback/springboot-logback.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mapstruct/springboot-mapstruct.iml" filepath="$PROJECT_DIR$/springboot-mapstruct/springboot-mapstruct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-xml/springboot-mybatis-xml.iml" filepath="$PROJECT_DIR$/springboot-mybatis-xml/springboot-mybatis-xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" filepath="$PROJECT_DIR$/springboot-mybatisplus/springboot-mybatisplus.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatisplus-autoGenerator/springboot-mybatisplus-autoGenerator.iml" filepath="$PROJECT_DIR$/springboot-mybatisplus-autoGenerator/springboot-mybatisplus-autoGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-profile/springboot-profile.iml" filepath="$PROJECT_DIR$/springboot-profile/springboot-profile.iml" />

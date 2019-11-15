@@ -20,6 +20,8 @@
         <option value="$PROJECT_DIR$/springboot-mapstruct/pom.xml" />
         <option value="$PROJECT_DIR$/springbooot-https/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-https/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatis-xml/pom.xml" />
       </list>
     </option>
   </component>
