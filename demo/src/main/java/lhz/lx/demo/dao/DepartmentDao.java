@@ -1,11 +1,11 @@
 package lhz.lx.demo.dao;
 
+import lhz.lx.demo.entities.Department;
+import org.springframework.stereotype.Repository;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-import lhz.lx.demo.entities.Department;
-import org.springframework.stereotype.Repository;
 
 @Repository
 public class DepartmentDao {
