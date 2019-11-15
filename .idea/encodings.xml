@@ -3,11 +3,13 @@
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/springboot-easypoi" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-https" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-https" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-https/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-i18n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-jsp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-logback" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mapstruct" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis-xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus-autoGenerator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus/src/main/resources/application.yml" charset="UTF-8" />
