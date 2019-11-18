@@ -1,6 +1,6 @@
 #server端口配置
 server:
-  port: 8080
+  port: 8081
 
 #数据库连接配置
 spring:
@@ -13,11 +13,17 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
 
 
-
   #HTML配置
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+  #热部署配置
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
 
 #Mybatis配置
 mybatis:

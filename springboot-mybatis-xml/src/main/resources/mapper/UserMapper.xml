@@ -11,7 +11,7 @@
     <insert id="InsertUser" parameterType="java.lang.Integer">
         insert into user(id,name,gender,age,address,qq,email)
         values
-        (#{id,jdbcType=Integer},#{name,jdbcType=VARCHAR},#{gender,jdbcType=VARCHAR},#{age,jdbcType=Integer},#{address,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR})
+        (#{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{gender,jdbcType=VARCHAR},#{age,jdbcType=INTEGER},#{address,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR})
     </insert>
 
     <!--删除用户-->
