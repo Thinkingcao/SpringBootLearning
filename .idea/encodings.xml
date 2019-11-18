@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/springboot-mapstruct" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatis-xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis-xml/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus-autoGenerator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatisplus/src/main/resources/application.yml" charset="UTF-8" />
