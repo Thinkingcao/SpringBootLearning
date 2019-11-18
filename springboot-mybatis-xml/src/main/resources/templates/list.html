@@ -13,55 +13,50 @@
 
 <fieldset style="margin-left: 10px">
     <p>
-    <h2>学生信息</h2>
+    <!--<h2>学生信息</h2>-->
     <button class='btn btn-primary btn-sm add' data-toggle='modal'
-            data-target='#myModal2'>增加</button>
+            data-target='#myModal2'>增加
+    </button>
     </p>
 </fieldset>
+<div class="table-responsive">
+    <table class="table table-bordered" >
+        <thead>
+        <tr class="success">
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>地址</th>
+            <th>QQ</th>
+            <th>邮箱</th>
+            <th>操作</th>
+        </tr>
+        </thead>
 
-<table class="table table-striped" style="margin:auto">
-
-    <thead>
-    <tr>
-        <th>编号</th>
-        <th>姓名</th>
-        <th>性别</th>
-        <th>年龄</th>
-        <th>地址</th>
-        <th>QQ</th>
-        <th>邮箱</th>
-        <th>操作</th>
-    </tr>
-    </thead>
-
-
-    <tbody id="mytbd">
-    <tr th:each="user : ${users}">
-        <td th:text="${user.id}"></td>
-        <td th:text="${user.name}"></td>
-        <td th:text="${user.gender}"></td>
-        <td th:text="${user.age}"></td>
-        <td th:text="${user.address}"></td>
-        <td th:text="${user.qq}"></td>
-        <td th:text="${user.email}"></td>
-        <td>
-            <a class="btn btn-default btn-sm" th:href="@{/del(id=${user.id})}">删除</a>
-            <a class="btn btn-default btn-sm" th:href="@{/update(id=${user.id})}">修改</a>
-            <!--<a th:href="@{/add}">添加</a>-->
-        </td>
-        <td>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">修改</a></li>
-                <li><a href="#">删除</a></li>
-            </ul>
-        </td>
-    </tr>
-    <!--<ul class="dropdown-menu" role="menu">-->
-        <!--<li><a href="#">修改</a></li>-->
-        <!--<li><a href="#">删除</a></li>-->
-    <!--</ul>-->
-    </tbody>
-</table>
-
+        <tbody id="mytbd">
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.qq}"></td>
+            <td th:text="${user.email}"></td>
+            <td>
+                <a class="btn btn-default btn-sm" th:href="@{/del(id=${user.id})}">删除</a>
+                <a class="btn btn-default btn-sm" th:href="@{/update(id=${user.id})}">修改</a>
+                <!--<a th:href="@{/add}">添加</a>-->
+            </td>
+            <td>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">修改</a></li>
+                    <li><a href="#">删除</a></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
