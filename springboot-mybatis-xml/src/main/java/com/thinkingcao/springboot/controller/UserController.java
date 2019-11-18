@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping("/index")
     public String index() {
-        return "index";
+        return "list";
     }
 
     /*查询用户列表*/

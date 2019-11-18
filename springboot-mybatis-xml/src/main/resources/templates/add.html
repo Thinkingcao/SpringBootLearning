@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工添加页面</title>
+</head>
+<body>
+<form th:action="@{/saveI}" method="post">
+    编号: <input type="number" name="id"><br>
+    姓名: <input type="text" id="name" name="name"><br>
+    性别: <input type="text" id="gender" name="gender"><br>
+    年龄: <input type="number" id="age" name="age"><br>
+    地址: <input type="text" id="address" name="address"><br>
+     QQ: <input type="text" id="qq" name="qq"><br>
+    邮箱: <input type="text" id="email" name="email"><br>
+    <input type="submit">
+</form>
+</body>
+</html>

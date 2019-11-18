@@ -5,11 +5,19 @@ server:
 #\u6570\u636E\u5E93\u8FDE\u63A5\u914D\u7F6E
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mybatis-xml
-    data-username: root
-    data-password: 123456
+    url: jdbc:mysql://localhost:3306/mybatis-xml?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    #\u4F7F\u7528druid\u6570\u636E\u6E90
     type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+
+
+
+  #HTML\u9875\u9762\u914D\u7F6E
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 
 #Mybatis\u914D\u7F6E
 mybatis:
@@ -22,3 +30,5 @@ logging:
   level:
     com.thinkingcao.springboot.mapper: debug   #\u6253\u5370mybatis\u7684SQL
     org.springframework.web: DEBUG   #Spring\u6846\u67B6\u4E2D\u7684\u65E5\u5FD7\u7EA7\u522B
+
+
