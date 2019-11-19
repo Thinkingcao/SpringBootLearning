@@ -8,10 +8,25 @@
     </select>
 
     <!--添加用户-->
-    <insert id="InsertUser" parameterType="java.lang.Integer">
-        insert into user(id,name,gender,age,address,qq,email)
-        values
-        (#{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{gender,jdbcType=VARCHAR},#{age,jdbcType=INTEGER},#{address,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR})
+    <insert id="InsertUser" parameterType="User">
+        insert into
+        user(
+          id,
+          name,
+          gender,
+          age,
+          address,
+          qq,
+          email)
+        values(
+          #{id,jdbcType=INTEGER},
+          #{name,jdbcType=VARCHAR},
+          #{gender,jdbcType=VARCHAR},
+          #{age,jdbcType=INTEGER},
+          #{address,jdbcType=VARCHAR},
+          #{qq,jdbcType=VARCHAR},
+          #{email,jdbcType=VARCHAR}
+          )
     </insert>
 
     <!--删除用户-->
@@ -25,8 +40,8 @@
     </select>
 
     <!--更改用户信息-->
-    <update id="UpdateUser" parameterType="java.lang.Integer">
-        update user set gender=#{gender},age=#{age},address=#{address},qq=#{qq},email=#{email} where name=#{name}
+    <update id="UpdateUser" parameterType="User">
+        update user set name=#{name},gender=#{gender},age=#{age},address=#{address},qq=#{qq},email=#{email} where id=#{id}
     </update>
 
 </mapper>

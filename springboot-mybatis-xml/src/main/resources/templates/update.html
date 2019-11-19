@@ -4,17 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <title>学生更新页面</title>
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
 </head>
 <body>
-<form th:action="@{/saveU}" th:object="${user}" method="post">
-    编号: <input type="hidden" name="id" th:value="*{user.id}"><br>
-    姓名: <input type="text" id="name" name="name" th:value="*{user.name}"><br>
-    性别: <input type="text" id="gender" name="gender" th:value="*{user.gender}"><br>
-    年龄: <input type="number" id="age" name="age" th:value="*{user.age}"><br>
-    地址: <input type="text" id="address" name="address" th:value="*{user.address}"><br>
-    QQ: <input type="text" id="qq" name="qq" th:value="*{user.qq}"><br>
-    邮箱: <input type="text" id="email" name="email" th:value="*{user.email}"><br>
-    <input type="submit">
+<!--<form th:action="@{/saveU}" th:object="${user}" method="post">-->
+<!--编号: <input type="number" name="id" th:value="*{user.getId()}"><br>-->
+<!--姓名: <input type="text" id="name" name="name" th:value="*{user.getName()}"><br>-->
+<!--性别: <input type="text" id="gender" name="gender" th:value="*{user.getGender()}"><br>-->
+<!--年龄: <input type="number" id="age" name="age" th:value="*{user.getAge()}"><br>-->
+<!--地址: <input type="text" id="address" name="address" th:value="*{user.getAddress()}"><br>-->
+<!--QQ: <input type="text" id="qq" name="qq" th:value="*{user.getQq()}"><br>-->
+<!--邮箱: <input type="text" id="email" name="email" th:value="*{user.getEmail()}"><br>-->
+<!--<input type="submit">-->
+<!--</form>-->
+
+<fieldset style="width:180px; margin:0px auto">
+    <p>
+    <h2>学生信息更新</h2>
+    </p>
+</fieldset>
+
+<form class="form-horizontal" th:action="@{saveU}" method="post" style="width: 35%;margin:0px auto">
+    <div class="form-group">
+        <label for="id" class="col-sm-2 control-label">编号:</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" th:field="*{user.id}" id="id" readonly="readonly">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">姓名:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:field="*{user.name}" id="name" placeholder="请输入姓名">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">姓别:</label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                <input type="radio" name="gender" th:field="*{user.gender}" id="boy" value="男" checked>男
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" th:field="*{user.gender}" id="gril" value="女">女
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age" class="col-sm-2 control-label">年龄:</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" th:field="*{user.age}" id="age" placeholder="请输入年龄">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="address" class="col-sm-2 control-label">地址:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:field="*{user.address}" id="address" placeholder="请输入地址">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="qq" class="col-sm-2 control-label">QQ:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" th:field="*{user.qq}" id="qq" placeholder="请输入QQ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">邮箱:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control input-sm" th:field="*{user.email}" id="email" placeholder="请输入邮箱">
+        </div>
+    </div>
+
+    <div class="form-group" style="text-align: center">
+        <a th:href="@{/saveU}">
+            <input class="btn btn-info" type="submit" value="提交">
+        </a>
+        <a href="update.html" th:href="@{/update}">
+            <input class="btn btn-info" type="submit" value="重置">
+        </a>
+        <a href="list.html" th:href="@{/list}">
+            <input class="btn btn-info" type="submit" value="返回">
+        </a>
+    </div>
 </form>
+
+
 </body>
 </html>

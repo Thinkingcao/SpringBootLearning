@@ -49,15 +49,15 @@ public class UserController {
 
     /*更新用户页面*/
     @RequestMapping("/update")
-    public String updateUser(ModelMap map) {
-        map.addAttribute("user", new User());
+    public String updateUser(Model model,Integer id) {
+        User user =userService.getById(id);
+        model.addAttribute("user", user);
         return "update";
     }
 
     /*添加完用户后重定向到list页面*/
     @RequestMapping("/saveI")
     public String saveI(@ModelAttribute User user) {
-
         userService.insert(user);
         return "redirect:/list";
     }

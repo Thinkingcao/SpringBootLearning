@@ -10,7 +10,7 @@ spring:
     password: 123456
     #数据源配置
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
 
 
   #HTML配置
@@ -20,9 +20,9 @@ spring:
   #热部署配置
   devtools:
     livereload:
-      enabled: true
+      enabled: true  #是否支持livereload
     restart:
-      enabled: true
+      enabled: true  #是否支持热部署
 
 
 #Mybatis配置
