@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-11-14 18:09:14
+Date: 2019-11-20 13:44:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,4 +33,9 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1', '曹某人', '男', '22', '上海', '617271939', '617271839@qq.com');
+INSERT INTO `user` VALUES ('2', '曹文哒哒哒哒哒', '女', '100', '上海', '129900555', '129900555@qq.com');
+INSERT INTO `user` VALUES ('3', '曹曹', '男', '24', '上海', '289087899', '289087899@qq.com');
+INSERT INTO `user` VALUES ('6', '李四', 'option1', '27', '上海市徐汇区徐家汇街道', '78945248', '78945248@qq.com');
+INSERT INTO `user` VALUES ('8', '张三', 'option2', '25', '上海市徐汇区徐家汇', '137982901', '137982901@qq.com');
 SET FOREIGN_KEY_CHECKS=1;

@@ -22,7 +22,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/index")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("users", userService.userList());
         return "list";
     }
 

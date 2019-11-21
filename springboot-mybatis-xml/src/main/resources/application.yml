@@ -11,8 +11,6 @@ spring:
     #数据源配置
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-
-
   #HTML配置
   thymeleaf:
     prefix: classpath:/templates/
@@ -23,7 +21,6 @@ spring:
       enabled: true  #是否支持livereload
     restart:
       enabled: true  #是否支持热部署
-
 
 #Mybatis配置
 mybatis:
