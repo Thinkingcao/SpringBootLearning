@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>单个文件上传</title>
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body>
+<!--<div style="text-align: center;margin-top: 50px;">-->
+    <!--<p>文件：<input type="file" id="file"></p>-->
+    <!--<p><button onclick="upload();">上传</button></p>-->
+<!--</div>-->
+<!--<div style="text-align: center;margin-top: 30px;" id="html"></div>-->
+<p>1、单文件上传</p>
+<form action="singleFileUpload" method="POST" enctype="multipart/form-data">
+    文件：<input type="file" name="file"/>
+    <input type="submit"/>
+</form>
+</body>
+<script>
+
+    function upload() {
+        var formData = new FormData();
+        formData.append("file", file.files[0]);
+        $.ajax({
+            url: "http://127.0.0.1:8080/singleFileUpload",
+            type: "post",
+            dataType: "json",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                $("#html").html("返回状态码：" + data.code + ",返回信息：" + data.message);
+            },
+            error: function () {
+                $("#html").html("发生未知错误");
+            }
+        })
+    }
+
+</script>
+
+</html>
