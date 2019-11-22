@@ -13,9 +13,9 @@
 <!--</div>-->
 <!--<div style="text-align: center;margin-top: 30px;" id="html"></div>-->
 <p>1、单文件上传</p>
-<form action="singleFileUpload" method="POST" enctype="multipart/form-data">
-    文件：<input type="file" name="file"/>
-    <input type="submit"/>
+<form action="/upload/singleFileUpload" method="POST" enctype="multipart/form-data">
+    <p>文件：<input type="file" name="file"/></p>
+    <p><input type="submit" value="上传"/></p>
 </form>
 </body>
 <script>

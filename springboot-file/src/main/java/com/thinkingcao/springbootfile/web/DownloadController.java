@@ -1,7 +1,9 @@
 package com.thinkingcao.springbootfile.web;
 
+import com.thinkingcao.springbootfile.result.ResponseCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -17,27 +19,33 @@ import java.io.IOException;
  * @date: 2019-11-21 17:10
  */
 @Controller
+@RequestMapping("/file")
 public class DownloadController {
+
+    @RequestMapping("/download")
+    public String download(){
+      return "download";
+    }
+
     /**
      * 文件下载
      *
      * @return
      */
-    @RequestMapping("/download")
-    public String downLoadFile(HttpServletRequest request, HttpServletResponse response) {
-        // 文件名可以从request中获取, 这儿为方便, 写死了
-        String fileName = "rtsch_ex.json";
-        // String path = request.getServletContext().getRealPath("/");
+    @RequestMapping("/downloadFile")
+    @ResponseBody
+    public Object downLoadFile(HttpServletRequest request, HttpServletResponse response) {
+        //文件名可以从request中获取, 这里为方便, 暂时写死
+        String fileName = "springboot学习.txt";
+        //String path = request.getServletContext().getRealPath("/");
         String path = "E:/test";
         File   file = new File(path, fileName);
-
         if (file.exists()) {
-            // 设置强制下载打开
+            //设置强制下载打开
             response.setContentType("application/force-download");
-            // 文件名乱码, 使用new String() 进行反编码
+            //文件名乱码, 使用new String() 进行反编码
             response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);
-
-            // 读取文件
+            //读取文件
             BufferedInputStream bi = null;
             try {
                 byte[] buffer = new byte[1024];
@@ -47,9 +55,9 @@ public class DownloadController {
                 while (-1 != (i = bi.read(buffer))) {
                     outputStream.write(buffer, 0, i);
                 }
-                return "下载成功";
+                return ResponseCode.success("下载成功");
             } catch (Exception e) {
-                return "程序猿真不知道为什么, 反正就是下载失败了";
+                return ResponseCode.error("下载失败");
             } finally {
                 if (bi != null) {
                     try {
@@ -60,6 +68,6 @@ public class DownloadController {
                 }
             }
         }
-        return "文件不存在";
+        return ResponseCode.error("文件不存在");
     }
 }

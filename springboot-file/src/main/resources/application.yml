@@ -2,11 +2,6 @@
 server:
   port: 8080
 
-#文件上传路径
-file:
-  path: D:/Images/upload
-
-
 spring:
   #HTML配置
   thymeleaf:
@@ -26,7 +21,7 @@ spring:
       #是否支持批量上传(默认为true)
       enabled: true
       #上传文件的临时目录
-      location:
+      location: D:\Images\upload\fileUpload
       #上传文件最大问1M(默认1M，根据自身业务控制即可)
       max-file-size: 50MB
       #设置总上传的数据大小10M(默认值10M，根据自身业务控制即可)
