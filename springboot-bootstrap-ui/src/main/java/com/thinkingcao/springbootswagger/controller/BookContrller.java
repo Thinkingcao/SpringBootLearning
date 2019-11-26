@@ -9,14 +9,18 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.*;
 
+
 /**
- * 用户创建某本图书	POST	/books/
- * 用户修改对某本图书	PUT	/books/:id/
- * 用户删除对某本图书	DELETE	/books/:id/
- * 用户获取所有的图书 GET /books
- *  用户获取某一图书  GET /Books/:id
- * Created by fangzhipeng on 2017/4/17.
- * 官方文档：http://swagger.io/docs/specification/api-host-and-base-path/
+ * <pre>
+ * @desc:
+ *  用户创建某本图书	POST	/books/
+ *  用户修改对某本图书	PUT	/books/:id/
+ *  用户删除对某本图书	DELETE	/books/:id/
+ *  用户获取所有的图书 GET /books
+ *  *用户获取某一图书  GET /Books/:id
+ * @auth: cao_wencao
+ * @date: 2019/11/26 20:27
+ * </pre>
  */
 @RestController
 @RequestMapping(value = "/books")

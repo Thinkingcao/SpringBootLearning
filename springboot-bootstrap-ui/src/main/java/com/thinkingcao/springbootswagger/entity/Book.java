@@ -1,7 +1,11 @@
 package com.thinkingcao.springbootswagger.entity;
 
 /**
- * Created by fangzhipeng on 2017/4/17.
+ * <pre>
+ * @desc: 图书实体类
+ * @auth: cao_wencao
+ * @date: 2019/11/26 20:27
+ * </pre>
  */
 public class Book {
     private long id;
