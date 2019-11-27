@@ -13,8 +13,17 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
   #HTML配置
   thymeleaf:
+    # 模板存放路径
     prefix: classpath:/templates/
+    # 模板后缀
     suffix: .html
+    # 启用缓存，建议生产开启
+    cache: false
+    # 是否启用
+    enabled: true
+    # 模板编码
+    encoding: UTF-8
+
   #热部署配置
   devtools:
     livereload:
