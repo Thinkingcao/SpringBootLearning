@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE服务端消息单向推送</title>
+</head>
+<body>
+<div id="sseMsg"></div>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    if (!!window.EventSource) { //EventSource对象只有新式的浏览器才有（Chrome、Firefox）等，EventSource是SSE的客户端
+        var source = new EventSource('push');
+        s = '';
+        //添加SSE客户端监听，在此获得服务器端推送的消息
+        source.addEventListener('message', function (e) {
+            s += e.data + "<br/>";
+            $("#sseMsg").html(s);
+
+        });
+        source.addEventListener('open', function (e) {
+            console.log("连接打开.........");
+        }, false);
+        source.addEventListener('error', function (e) {
+            if (e.readyState == EventSource.CLOSED) {
+                console.log("连接关闭.........");
+            } else {
+                console.log(e.readyState);
+            }
+        }, false);
+    } else {
+        console.log("你的浏览器不支持SSE");
+    }
+</script>
+</body>
+</html>

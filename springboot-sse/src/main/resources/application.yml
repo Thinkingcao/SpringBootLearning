@@ -1,0 +1,17 @@
+#\u7AEF\u53E3\u914D\u7F6E
+server:
+  port: 8081
+
+spring:
+  #HTML\u914D\u7F6E
+  thymeleaf:
+    # \u6A21\u677F\u5B58\u653E\u8DEF\u5F84
+    prefix: classpath:/templates/
+    # \u6A21\u677F\u540E\u7F00
+    suffix: .html
+    # \u662F\u5426\u542F\u7528
+    enabled: true
+    # \u6A21\u677F\u7F16\u7801
+    encoding: UTF-8
+    # \u542F\u7528\u7F13\u5B58\uFF0C\u5EFA\u8BAE\u751F\u4EA7\u5F00\u542F
+    cache: false
