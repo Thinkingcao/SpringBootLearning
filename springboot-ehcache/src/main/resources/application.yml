@@ -1,0 +1,34 @@
+#ehcache 配置
+spring:
+  cache:
+    type: ehcache  #指定缓存类型
+    ehcache:
+      config: classpath:config/ehcache.xml  #加载缓存配置文件
+
+  #数据库配置
+  datasource:
+    #数据库链接地址
+    url: jdbc:mysql://localhost:3306/springboot-ehcache?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    #数据库用户名
+    username: root
+    #数据库密码
+    password: 123456
+    #数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    ##validate  加载hibernate时，验证创建数据库表结构
+    ##create   每次加载hibernate，重新创建数据库表结构，这就是导致数据库表数据丢失的原因。
+    ##create-drop        加载hibernate时创建，退出是删除表结构
+    ##update                 加载hibernate自动更新数据库结构
+    ##validate 启动时验证表的结构，不会创建表
+    ##none  启动时不做任何操作
+  jpa:
+    hibernate:
+      #每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新
+      ddl-auto: update  #第一次建表create  后面用update，要不然每次重启都会新建表
+    #控制台打印sql
+    show-sql: true
+    database: mysql
+
+
+
