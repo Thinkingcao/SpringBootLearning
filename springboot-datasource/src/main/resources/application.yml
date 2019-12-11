@@ -1,0 +1,23 @@
+
+#指定配置文件为tes
+spring:
+  profiles:
+    active: test
+
+#配置Mybatis
+mybatis:
+  configuration:
+    # 开启驼峰命名转换，如：Table(create_time) -> Entity(createTime)。不需要我们关心怎么进行字段匹配，mybatis会自动识别`大写字母与下划线`
+    map-underscore-to-camel-case: true
+    config-location: classpath:config/mybatis-config.xml  #mybatis配置文件位置
+    mapper-locations: classpath:mapper/*.xml       #mapper.xml 文件地址
+    type-aliases-package: com.thinkingcao.springbootdatasource.entity #实体类别名
+
+#打印SQL日志
+logging:
+  level:
+    com:
+      thinkingcao.springbootdatasource.mapper:.*: DEBUG
+
+
+
