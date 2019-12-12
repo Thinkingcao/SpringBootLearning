@@ -1,5 +1,6 @@
 package com.thinkingcao.springbootmongodb.controller;
 
+import com.thinkingcao.springbootmongodb.dao.OrderDao;
 import com.thinkingcao.springbootmongodb.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,12 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
     @Autowired
-    private StudentRepository studentRepository;
+    private OrderDao orderDao;
 
-    @RequestMapping("/students")
+   /* @RequestMapping("/students")
     Object queryStudents() {
         return studentService.queryStudents();
-    }
+    }*/
 
     @RequestMapping("/order/{orderId}")
     Object queryStudentByName(@PathVariable String orderId) {
