@@ -29,6 +29,12 @@ spring:
     #控制台打印sql
     show-sql: true
     database: mysql
-
-
-
+#设置日志，打印jpa执行SQL语句时，打印绑定参数显示
+logging:
+  level:
+    org.springframework.web: error
+    org.hibernate.SQL: debug
+    org.hibernate.engine.QueryParameters: debug
+    org.hibernate.engine.query.HQLQueryPlan: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    log4j.logger.net.sf.ehcache: debug

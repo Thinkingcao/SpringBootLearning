@@ -20,7 +20,7 @@ public interface IOrderService {
      * @param order
      * @return
      */
-    Order saveOne(Order order);
+    void saveOne(Order order);
 
     /**
      * 删除一个订单信息

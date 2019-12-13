@@ -20,33 +20,31 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @CacheConfig(cacheNames = {"userCache"})
 public class OrderService implements IOrderService {
+
     @Autowired
     private OrderRepository orderRepository;
 
 
-    @Cacheable(value="order",key="#orderId")
+    @Cacheable(value = "order", key = "#orderId")
     @Override
     public Order findOne(Integer orderId) {
-        log.info("查询功能，缓存未找到，直接读取数据库，ID为：" + orderId);
-        return this.orderRepository.findById(orderId).orElse(null) ;
-
+        log.info("【查询订单，缓存未找到，直接查询数据库，orderId为】：{}" , orderId);
+        return this.orderRepository.findById(orderId).orElse(null);
     }
 
-    @CachePut(value="order",key="#order.getOrderId()")
+    @CachePut(value = "order", key = "#order.getOrderId()")
     @Override
-    public Order saveOne(Order order) {
-        log.info("新增功能，同步到缓存，直接写入数据库，ID为：" + order.getOrderId());
-        return this.orderRepository.save(order);
-
+    public void saveOne(Order order) {
+        log.info("【新增订单，同步到缓存，orderId为】：{}" , order.getOrderId());
+        this.orderRepository.save(order);
     }
 
-    @CacheEvict(value="order",key="#orderId")
+    @CacheEvict(value = "order", key = "#orderId")
     @Override
     public void deleteOne(Integer orderId) {
-        log.info("删除功能，删除缓存，直接删除数据库数据，ID为：" + orderId);
+        log.info("【删除订单，删除缓存，orderId为】：{}" , orderId);
         orderRepository.deleteById(orderId);
     }
-
 
 
 }
