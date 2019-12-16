@@ -1,10 +1,10 @@
-package com.thinkingcao.springboot.jwt;
+package com.thinkingcao.springboot.token;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootJwtApplicationTests {
+class SpringbootTokenApplicationTests {
 
     @Test
     void contextLoads() {
