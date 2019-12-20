@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
- * @desc: redis配置类
+ * @desc: redis配置类,使用RedisTemplate需要注入Bean到Spring容器，类似Jedis
  * @author: cao_wencao
  * @date: 2019-12-13 12:17
  */
