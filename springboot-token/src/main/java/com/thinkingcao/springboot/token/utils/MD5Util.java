@@ -13,8 +13,7 @@ import java.security.NoSuchAlgorithmException;
 public class MD5Util {
 
     /**
-     * MD5 加密   绿账的加密方式
-     *绿账加密方式，仅适用绿账
+     * MD5 加密
      * @param plainText 明文
      * @return 消息摘要
      * @throws NoSuchAlgorithmException
