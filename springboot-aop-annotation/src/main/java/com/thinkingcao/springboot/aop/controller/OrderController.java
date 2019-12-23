@@ -32,6 +32,8 @@ public class OrderController {
     @RequestMapping(value = "/getToken")
     public ResponseCode getToken(){
         String token = TokenUtils.getToken();
+        //将生成的token存进redis   key：token  value: token   time : 30分钟
+        redisUtil.set(token, token, redisUtil.TOKEN_EXPIRE_TIME);
         return ResponseCode.success("获取token成功",token);
     }
 

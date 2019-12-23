@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisUtil {
 
+    // 默认缓存时间
+    public static final Long TOKEN_EXPIRE_TIME = 30 * 60L;
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;

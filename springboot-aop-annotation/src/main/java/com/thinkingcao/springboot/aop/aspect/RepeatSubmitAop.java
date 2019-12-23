@@ -7,19 +7,14 @@ import com.thinkingcao.springboot.aop.utils.HttpServletResponseUtil;
 import com.thinkingcao.springboot.aop.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * @desc: 表单重复提交AOP切面，解析注解@NoRepeatSubmit
@@ -36,7 +31,7 @@ public class RepeatSubmitAop {
     private RedisUtil redisUtil;
 
     //定义切入点, 拦截controller的所有请求
-    private static final String POINTCUT = "execution(public * com.thinkingcao.springboot.aop.controller.*.*(..))";
+    private  final String POINTCUT = "execution(public * com.thinkingcao.springboot.aop.controller.*.*(..))";
 
 
     //前置通知
@@ -77,11 +72,14 @@ public class RepeatSubmitAop {
                 HttpServletResponseUtil.response("参数错误!");
                 return null;
             }
+            //如果redis中token不存在，则为重复提交
             String redisToken = (String) redisUtil.get(token);
             if (StringUtils.isEmpty(redisToken)) {
                 HttpServletResponseUtil.response("请勿重复提交!");
                 return null;
             }
+            //redis不为空，则为第一次请求
+            redisUtil.del(redisToken);
         }
         //放行
         Object proceed = joinPoint.proceed();

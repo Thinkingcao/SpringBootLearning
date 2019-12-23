@@ -7,7 +7,7 @@ package com.thinkingcao.springboot.aop.utils;
  */
 public interface Constant {
 
-   public static final String EXTAPIHEAD = "head";
+    public static final String EXTAPIHEAD = "head";
 
     public static final String EXTAPIFROM = "from";
 }
