@@ -1,0 +1,19 @@
+#\u4E8C\u7EF4\u7801\u914D\u7F6E
+qrcode:
+  info:
+    #\u4E8C\u7EF4\u7801\u7F16\u7801
+    charset: utf-8
+    #\u4E8C\u7EF4\u7801\u5BBD\u5EA6
+    qrWidth: 300
+    #\u4E8C\u7EF4\u7801\u9AD8\u5EA6
+    qrHeight: 300
+    #logo\u5BBD\u5EA6
+    logoWidth: 30
+    #logo\u5BBD\u5EA6
+    logoHeight: 30
+    #\u4E8C\u7EF4\u7801\u56FE\u7247\u7C7B\u578Bjpg\u3001png\u7B49
+    qrPicType: jpg
+
+#spring:
+#  resources:
+#    static-locations: classpath:/static/images
