@@ -1,17 +1,17 @@
-#\u4E8C\u7EF4\u7801\u914D\u7F6E
+#二维码配置
 qrcode:
   info:
-    #\u4E8C\u7EF4\u7801\u7F16\u7801
+    #二维码编码
     charset: utf-8
-    #\u4E8C\u7EF4\u7801\u5BBD\u5EA6
+    #二维码宽度
     qrWidth: 300
-    #\u4E8C\u7EF4\u7801\u9AD8\u5EA6
+    #二维码高度
     qrHeight: 300
-    #logo\u5BBD\u5EA6
+    #logo宽度
     logoWidth: 30
-    #logo\u5BBD\u5EA6
+    #logo高度
     logoHeight: 30
-    #\u4E8C\u7EF4\u7801\u56FE\u7247\u7C7B\u578Bjpg\u3001png\u7B49
+    #二维码图片类型
     qrPicType: jpg
 
 #spring:
