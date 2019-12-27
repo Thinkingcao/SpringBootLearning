@@ -1,0 +1,8 @@
+
+spring:
+  ### \u5F00\u542F404\u5F02\u5E38\u629B\u51FA ###
+  mvc:
+    throw-exception-if-no-handler-found: true
+  ### \u5173\u95ED\u9759\u6001\u8D44\u6E90\u6620\u5C04 ###
+  resources:
+    add-mappings: false
