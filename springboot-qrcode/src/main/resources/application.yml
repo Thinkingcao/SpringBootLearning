@@ -8,12 +8,15 @@ qrcode:
     #二维码高度
     qrHeight: 300
     #logo宽度
-    logoWidth: 30
+    logoWidth: 120
     #logo高度
-    logoHeight: 30
+    logoHeight: 120
     #二维码图片类型
     qrPicType: jpg
 
-#spring:
-#  resources:
-#    static-locations: classpath:/static/images
+
+#打印输出debug级别日志
+logging:
+  level:
+    com.thinkingcao.springboot.qrcode: debug
+

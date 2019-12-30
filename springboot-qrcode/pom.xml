@@ -41,6 +41,7 @@
             <artifactId>core</artifactId>
             <version>3.4.0</version>
         </dependency>
+
         <!-- 二维码组件zxing/javase-->
         <dependency>
             <groupId>com.google.zxing</groupId>
