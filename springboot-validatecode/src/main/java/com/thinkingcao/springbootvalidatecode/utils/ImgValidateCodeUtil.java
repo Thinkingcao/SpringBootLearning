@@ -9,6 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * @desc: 验证码工具类
+ * @auth: cao_wencao
+ * @date: 2019/12/31 14:38
+ */
 public class ImgValidateCodeUtil {
 
     private static Random random = new Random();

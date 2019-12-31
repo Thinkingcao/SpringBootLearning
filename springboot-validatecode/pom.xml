@@ -48,6 +48,14 @@
             <version>2.0</version>
         </dependency>
 
+        <!-- guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.1-jre</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

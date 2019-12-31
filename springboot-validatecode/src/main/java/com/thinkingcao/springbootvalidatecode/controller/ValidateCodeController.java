@@ -1,17 +1,24 @@
 package com.thinkingcao.springbootvalidatecode.controller;
 
+import com.google.common.collect.Maps;
 import com.thinkingcao.springbootvalidatecode.utils.ImgValidateCodeUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @desc: 图片验证码Controller
+ * @auth: cao_wencao
+ * @date: 2019/12/31 15:24
+ */
+@Slf4j
 @RestController
 @RequestMapping("/code")
 public class ValidateCodeController {
@@ -25,16 +32,15 @@ public class ValidateCodeController {
      */
     @GetMapping("/getImgCode")
     public Map<String, String> getImgCode() {
-
-        Map<String, String> result = new HashMap<>();
-
+        //初始化一个map
+        Map<String, String> result = Maps.newHashMap();
         try {
             // 获取 4位数验证码
             result= ImgValidateCodeUtil.getImgCodeBaseCode(4);
             // 将验证码存入redis 中（有效时长5分钟）
-            cacheImgCode(result);
+            setImgCodeCache(result);
         } catch (Exception e) {
-            System.out.println(e);
+            log.info(e.getMessage());
         }
         return result;
     }
@@ -55,14 +61,13 @@ public class ValidateCodeController {
             return "验证码输入正确";
         }
         return "验证码输入错误";
-
     }
 
     /**
      * 将验证码存入redis 中
      * @param result
      */
-    public void cacheImgCode(Map<String, String> result) {
+    private void setImgCodeCache(Map<String, String> result) {
         String imgCode = result.get("imgCode");
         UUID randomUUID = UUID.randomUUID();
         String imgCodeKey = randomUUID.toString();
