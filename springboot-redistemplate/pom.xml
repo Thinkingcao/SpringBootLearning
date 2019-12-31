@@ -25,6 +25,12 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+       <!-- SpringBoot2以后底层默认使用lettuce，同时依赖于commons-pool2依赖-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
         <!-- web组件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
