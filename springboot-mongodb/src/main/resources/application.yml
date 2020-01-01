@@ -3,9 +3,11 @@ spring:
     name: springboot-mongodb
   data:
     mongodb:
+      #mongodb配置方式一：一个个属性指定 (默认没有账号和密码)
       host: localhost
-      username: test
-      password: 123456
+      #username: admin
+      #password:
       port: 27017
-      uri: mongodb://localhost/test
-      database: springboot-mongodb
+      database: mongodb-test
+      #mongodb配置方式二：使用uri方式  (默认没有账号和密码)
+      ##uri: mongodb://localhost:27017/mongodb-test

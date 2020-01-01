@@ -3,6 +3,7 @@ package com.thinkingcao.springbootmongodb.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
@@ -11,6 +12,7 @@ import java.util.Date;
  * @author: cao_wencao
  * @date: 2019-12-05 14:22
  */
+
 @Data
 public class Order {
 
