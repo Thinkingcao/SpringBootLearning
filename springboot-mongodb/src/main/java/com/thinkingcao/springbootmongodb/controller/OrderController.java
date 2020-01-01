@@ -24,6 +24,13 @@ public class OrderController {
     private OrderService orderService;
 
 
+    /**
+     * @url:  http://localhost:8080/api/add
+     * @desc: 新增订单
+     * @auth: cao_wencao
+     * @date: 2020/1/2 0:02
+     */
+
     @PostMapping("/add")
     public ResponseCode addOrder(@RequestBody Order order){
         Order resultOrder =  orderService.addOrder(order);

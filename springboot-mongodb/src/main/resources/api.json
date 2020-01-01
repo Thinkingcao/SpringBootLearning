@@ -1,0 +1,11 @@
+/*1. 新增订单接口*/
+{
+  "orderId": "11",
+  "goodId": 0,
+  "orderMoney": 1.1,
+  "receiverAddress": "上海",
+  "receiverName": "Thinkingcao",
+  "receiverPhone": "13027189394",
+  "payState": "已支付",
+  "payDate": 1577884881120
+}
