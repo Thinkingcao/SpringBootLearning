@@ -51,7 +51,7 @@ public class OrderController {
     @PutMapping("/update")
     public ResponseCode updateOrder(@RequestBody Order order) {
         Order newOrder = orderService.updateOrder(order);
-        return ResponseCode.success("查询订单成功", newOrder);
+        return ResponseCode.success("更新订单成功", newOrder);
     }
 
 
