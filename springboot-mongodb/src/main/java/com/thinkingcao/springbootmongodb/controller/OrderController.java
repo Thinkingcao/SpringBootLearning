@@ -51,6 +51,7 @@ public class OrderController {
     @PutMapping("/update")
     public ResponseCode updateOrder(@RequestBody Order order) {
         Order newOrder = orderService.updateOrder(order);
+        log.info("newOrder : {}", JSON.toJSONString(newOrder));
         return ResponseCode.success("更新订单成功", newOrder);
     }
 
@@ -64,6 +65,7 @@ public class OrderController {
     @GetMapping("/{orderId}")
     public ResponseCode findOrderById(@PathVariable("orderId") String orderId) {
         Order newOrder = orderService.findOrderByOrderId(orderId);
+        log.info("newOrder : {}", JSON.toJSONString(newOrder));
         return ResponseCode.success("查询订单成功！", newOrder);
     }
 
@@ -76,6 +78,7 @@ public class OrderController {
     @DeleteMapping("/{orderId}")
     public ResponseCode deleteOrderById(@PathVariable("orderId") String orderId) {
         orderService.deleteOrderByOrderId(orderId);
+        log.info("删除订单成功，订单ID为: ｛｝",orderId);
         return ResponseCode.success("删除订单成功");
     }
 
@@ -88,6 +91,7 @@ public class OrderController {
     @GetMapping("/list")
     public ResponseCode findAllOrder() {
         List<Order>  orderList = orderService.findAllOrder();
+        log.info("orderList : {}", JSON.toJSONString(orderList));
         return ResponseCode.success("查询订单成功",orderList);
     }
 
