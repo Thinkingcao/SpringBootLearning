@@ -9,6 +9,7 @@ import java.util.List;
 
 @Component
 public class OrderDao {
+
     private final MongoTemplate mongoTemplate;
 
     @Autowired

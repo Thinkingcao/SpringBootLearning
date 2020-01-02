@@ -30,9 +30,19 @@ public class ResponseCode extends HashMap<String, Object> {
         /** 成功 */
         SUCCESS(200),
         /** 警告 */
-        WARN(400),
+        WARN(300),
         /** 错误 */
-        ERROR(500);
+        ERROR(500),
+
+        /** 未登录 */
+        NO_LOGIN(400),
+        /** 登录失败 */
+        LOGIN_FAILED(401),
+        /** TOKEN过期 */
+        TOKEN_EXPIRED(402),
+        /** 无权限 */
+        NO_PERMISSION(403);
+
         private final int value;
 
         Type(int value)
