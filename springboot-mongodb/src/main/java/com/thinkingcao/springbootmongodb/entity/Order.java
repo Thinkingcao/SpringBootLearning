@@ -20,8 +20,7 @@ public class Order {
 
     @Id
     private String orderId; //订单编号id
-
-    @Indexed(unique = true)
+    
     private int goodId; //商品编号id
 
     private double orderMoney; //订单金额
