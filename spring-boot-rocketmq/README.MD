@@ -1,4 +1,4 @@
-1.ConsumeFromWhere设置
+## 1.ConsumeFromWhere设置
      ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET一个新的订阅组第一次启动从队列的最前位置开始消费,后续再启动接着上次消费的进度开始消费
      ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET 一个新的订阅组第一次启动从队列的最后位置开始消费,后续再启动接着上次消费的进度开始消费
      ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET_AND_FROM_MIN_WHEN_BOOT_FIRST  @Deprecated
@@ -11,7 +11,7 @@
 
 
 
- 2.搭建调试环境的过程：
+## 2.搭建调试环境的过程：
 
  启动 RocketMQ Namesrv
  启动 RocketMQ Broker
