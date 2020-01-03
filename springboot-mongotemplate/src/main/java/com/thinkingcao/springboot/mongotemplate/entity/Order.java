@@ -3,7 +3,6 @@ package com.thinkingcao.springboot.mongotemplate.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -21,7 +20,7 @@ public class Order {
     @Id
     private String orderId; //订单编号id
 
-    @Indexed(unique = true)
+    @Field("goodId")
     private int goodId; //商品编号id
 
     private double orderMoney; //订单金额

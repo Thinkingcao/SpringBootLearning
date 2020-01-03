@@ -1,4 +1,20 @@
+
+##\u6B64\u5904\u6211\u7528\u7684\u662F\u672C\u5730\u5B89\u88C5\u7684mongodb\uFF0C\u6240\u4EE5\u6CA1\u6709\u7528\u6237\u540D\u548C\u5BC6\u7801\uFF0C\u6709\u7528\u6237\u540D\u548C\u5BC6\u7801\u7684\u683C\u5F0F\u662F
+  #spring.data.mongodb.uri=mongodb://name:pass@localhost:27017/test\uFF0C\u5176\u4E2Dname\u662F\u7528\u6237\u540D\uFF0Cpass\u662F\u5BC6\u7801
+
+## \u5982\u679C\u8981\u914D\u7F6E\u591A\u4E2A\u6570\u636E\u5E93\uFF0C\u5219\u4E2D\u95F4\u7528","\u5206\u5272\uFF0C\u4F8B\u5982
+  #spring.data.mongodb.uri=mongodb://192.168.1.1:20000,192.168.1.2:20000,192.168.252.12:20000/test
+
+
+
+#MongoDB\u914D\u7F6E
 spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/mongodbtemplate-test
+
+
+#\u914D\u7F6E\u65E5\u5FD7\u7EA7\u522B MongoDB\u5728\u63A7\u5236\u53F0\u8F93\u51FA\u6267\u884C\u65E5\u5FD7
+logging:
+  level:
+    org.springframework.data.mongodb.core: debug
