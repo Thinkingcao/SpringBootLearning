@@ -1,6 +1,7 @@
 package com.thinkingcao.springbootvalidatecode.controller;
 
 import com.google.common.collect.Maps;
+import com.thinkingcao.springbootvalidatecode.config.ValidateCodeProperties;
 import com.thinkingcao.springbootvalidatecode.result.ResponseCode;
 import com.thinkingcao.springbootvalidatecode.utils.ImgValidateCodeUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,10 @@ public class ValidateCodeController {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+    @Autowired
+    private ValidateCodeProperties validateCodeProperties;
+
+
     /**
      * @url： http://127.0.0.1:8080/api/getImgCode
      * @desc: 生成图片验证码
@@ -39,22 +44,22 @@ public class ValidateCodeController {
         Map<String, String> result = Maps.newHashMap();
         try {
             // 获取 4位数验证码
-            result= ImgValidateCodeUtil.getImgCodeBaseCode(4);
+            result = ImgValidateCodeUtil.getImgCodeBaseCode(4);
             log.info("生成图片验证码 : {}", result);
             // 将验证码存入redis 中（有效时长5分钟）
             setImgCodeCache(result);
         } catch (Exception e) {
             log.info(e.getMessage());
         }
-        return ResponseCode.success("生产图片验证码成功", result);
+        return ResponseCode.success("生成图片验证码成功", result);
     }
 
 
     /**
-     * @url:  http://127.0.0.1:8080/api/getImgCode
-     * @desc: 校验验证码
      * @param imgCodeKey
      * @param imgCode
+     * @url: http://127.0.0.1:8080/api/getImgCode
+     * @desc: 校验验证码
      * @auth: cao_wencao
      * @date: 2020/1/3 14:43
      */
@@ -65,8 +70,8 @@ public class ValidateCodeController {
             return ResponseCode.error("图片验证码已过期，请重新获取");
         }
         if (cacheCode.equals(imgCode.toLowerCase())) {
-            log.debug("cacheCode: {} ,imgCode : {}", cacheCode , imgCode);
-            return ResponseCode.success("验证码校验正确",cacheCode);
+            log.debug("cacheCode: {} ,imgCode : {}", cacheCode, imgCode);
+            return ResponseCode.success("验证码校验正确", cacheCode);
         }
         return ResponseCode.error("验证码输入错误");
     }
@@ -74,6 +79,7 @@ public class ValidateCodeController {
 
     /**
      * 将验证码存入redis 中
+     *
      * @param result
      */
     private void setImgCodeCache(Map<String, String> result) {
@@ -84,5 +90,15 @@ public class ValidateCodeController {
         // 图片验证码有效时间 ：5 分钟
         redisTemplate.opsForValue().set(imgCodeKey, imgCode, 5, TimeUnit.MINUTES);
         result.put("imgCodeKey", imgCodeKey);
+    }
+
+    @GetMapping("/getParam")
+    public ResponseCode getParam() {
+        Map<String, String> map = Maps.newHashMap();
+        map.put("codeWidth", String.valueOf(validateCodeProperties.getCodeWidth()));
+        map.put("codeHeight", String.valueOf(validateCodeProperties.getCodeHeight()));
+        map.put("codeLineSize", String.valueOf(validateCodeProperties.getCodeLineSize()));
+        map.put("codeRandomString", String.valueOf(validateCodeProperties.getCodeRandomString()));
+        return ResponseCode.success(map);
     }
 }

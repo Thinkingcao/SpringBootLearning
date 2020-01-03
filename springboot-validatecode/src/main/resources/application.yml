@@ -16,3 +16,16 @@ redis:
       max-wait:  -1
       # 最大活跃连接数，负数为不限制
       max-active: -1
+
+
+#验证码参数变量配置
+validatecode:
+   info:
+     #图片验证码宽度
+     codeWidth: 160
+     #图片验证码高度
+     codeHeight: 40
+     #图片验证码干扰线数量
+     codeLineSize: 30
+     #图片验证码词典
+     codeRandomString: 0123456789abcdefghijklmnopqrstuvwxyz
