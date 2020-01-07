@@ -6,9 +6,11 @@ package com.thinkingcao.springboot.memcached.config;
  * @date: 2020-01-06 10:08
  */
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
 @ConfigurationProperties(prefix = "memcached")
 public class MemcachedProperties {
@@ -38,46 +40,5 @@ public class MemcachedProperties {
      */
     private boolean enabled;
 
-
-
-    public String getServer() {
-        return server;
-    }
-
-    public void setServer(String server) {
-        this.server = server;
-    }
-
-    public Integer getOpTimeout() {
-        return opTimeout;
-    }
-
-    public void setOpTimeout(Integer opTimeout) {
-        this.opTimeout = opTimeout;
-    }
-
-    public Integer getPoolSize() {
-        return poolSize;
-    }
-
-    public void setPoolSize(Integer poolSize) {
-        this.poolSize = poolSize;
-    }
-
-    public boolean isFailureMode() {
-        return failureMode;
-    }
-
-    public void setFailureMode(boolean failureMode) {
-        this.failureMode = failureMode;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
 
 }

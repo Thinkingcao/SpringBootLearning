@@ -182,4 +182,5 @@ public class ResponseCode extends HashMap<String, Object> {
         return new ResponseCode(Type.ERROR, msg, data);
     }
 
+
 }
