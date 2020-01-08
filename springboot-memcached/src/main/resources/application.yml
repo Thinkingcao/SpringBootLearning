@@ -1,8 +1,13 @@
 
+
 #memcached配置
 memcached:
   server: 127.0.0.1:11211 #memcached(服务器集群格式为host:port host:port，多个服务器之间用空格隔开)
-  opTimeout: 3000 #接口操作的默认超时时间，可以被接口覆盖\u63A5\u53E3\u8986\u76D6
+  opTimeout: 3000 #接口操作的默认超时时间，可以被接口覆盖
   poolSize: 10 #连接池大小
   failureMode: false #是否开启失败模式，默认为false
   enabled: true  #是否使用memcached缓存
+
+
+
+
