@@ -30,6 +30,6 @@ public class OrderEntity implements Serializable {
 
     private String payState; //支付状态
 
-    //@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     private Date payDate; //支付时间
 }
