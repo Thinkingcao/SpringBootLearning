@@ -93,6 +93,11 @@ public class OrderController {
     }
 
 
+    /**
+     * @desc: 新增对象缓存
+     * @auth: cao_wencao
+     * @date: 2020/1/8 10:05
+     */
     @RequestMapping("/testAddGetDeleteObject")
     public void testAddGetDeleteObject(@RequestBody OrderEntity orderEntity){
         // 1.新增订单
@@ -107,6 +112,11 @@ public class OrderController {
     }
 
 
+    /**
+     * @desc: 新增字符串缓存
+     * @auth: cao_wencao
+     * @date: 2020/1/8 10:05
+     */
     @RequestMapping("/testAddGetDeleteUpdateStr")
     public void testAddGetDeleteUpdateStr() throws Exception{
         //新增操作

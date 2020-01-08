@@ -16,7 +16,8 @@ class SpringbootMemcachedApplicationTests {
 
     @Test
     void contextLoads() throws InterruptedException, MemcachedException, TimeoutException {
-        System.out.println(memcachedClient.get("1").toString());
+        System.out.println(memcachedClient.set("111", 0, "你好啊"));
+        System.out.println(memcachedClient.get("111").toString());
     }
 
 }
