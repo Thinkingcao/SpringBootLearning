@@ -61,10 +61,9 @@ public class RocketMQConsumer  {
             //订阅指定 Topic 下的所有消息
             consumer.subscribe(topic,"*");
             consumer.start();
-            log.info("consume is start ,groupName:{},topic:{}",groupName,topic);
+            log.info("rocketMQ消费者开始消费消息——groupName : {},topic:{}",groupName,topic);
         } catch (MQClientException e) {
-            log.error("consume start error");
-            e.printStackTrace();
+            log.error("rocketMQ消费者消费消息异常——error ： {}",e.getErrorMessage());
         }
         return consumer;
     }

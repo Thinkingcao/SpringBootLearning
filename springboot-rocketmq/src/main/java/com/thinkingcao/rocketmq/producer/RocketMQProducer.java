@@ -31,6 +31,7 @@ public class RocketMQProducer {
     private int sendMsgTimeout;
 
     private DefaultMQProducer producer;
+
     @Bean
     public DefaultMQProducer getRocketMQProducer() {
         producer = new DefaultMQProducer(groupName);
@@ -42,10 +43,9 @@ public class RocketMQProducer {
 
         try {
             producer.start();
-            log.info("rocketMQ is start !!groupName : {},nameserAddr:{}",groupName,nameserAddr);
+            log.info("rocketMQ生产者开始生产消息——groupName : {},nameserAddr:{}",groupName,nameserAddr);
         } catch (MQClientException e) {
-            log.error(String.format("rocketMQ start error,{}",e.getMessage()));
-            e.printStackTrace();
+            log.error(String.format("rocketMQ生产者生产消息异常——error,{}",e.getErrorMessage()));
         }
         return producer;
     }
