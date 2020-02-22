@@ -1,32 +1,32 @@
 spring:
   redis:
-    #Redis\u670D\u52A1\u5668\u8FDE\u63A5\u5730\u5740
+    #Redis服务器连接地址
     host: 127.0.0.1
-    #Redis\u670D\u52A1\u5668\u8FDE\u63A5\u7AEF\u53E3
+    #Redis服务器连接端口
     port: 6379
-    #Redis\u6570\u636E\u5E93(\u9ED8\u8BA4\u4E3A0)
+    #Redis数据库(默认为0)
     database: 1
-    #Redis\u6570\u636E\u5E93\u8FDE\u63A5\u5BC6\u7801
+    #Redis数据库连接密码
     password:
-    #\u8FDE\u63A5\u8D85\u65F6\u65F6\u95F4\uFF08\u6BEB\u79D2\uFF09
+    #连接超时时间（毫秒）
     timeout: 10000ms
-    #\lettuce\u8FDE\u63A5\u6C60\u914D\u7F6E(\u4E5F\u53EF\u4EE5\u4F7F\u7528Jedispool\u8FDE\u63A5\u6C60,\u63A8\u8350\u4F7F\u7528lettuce\u8FDE\u63A5\u6C60)
+    #\lettuce连接池配置(也可以使用Jedispool连接池,推荐使用lettuce连接池)
     lettuce:
       pool:
-        #\u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5927\u7A7A\u95F2\u8FDE\u63A5
+        #连接池中的最大空闲连接
         max-idle: 8
-        #\u8FDE\u63A5\u6C60\u4E2D\u7684\u6700\u5C0F\u7A7A\u95F2\u8FDE\u63A5
+        #连接池中的最小空闲连接
         min-idle: 0
-        #\u8FDE\u63A5\u6C60\u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4\uFF08\u4F7F\u7528\u8D1F\u503C\u8868\u793A\u6CA1\u6709\u9650\u5236\uFF09
+        #连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: -1ms
-        #\u8FDE\u63A5\u6C60\u6700\u5927\u8FDE\u63A5\u6570\uFF08\u4F7F\u7528\u8D1F\u503C\u8868\u793A\u6CA1\u6709\u9650\u5236\uFF09
+        #连接池最大连接数（使用负值表示没有限制
         max-active: 8
 
   session:
     store-type: redis
     redis:
       flush-mode: on_save
-      #\u6DFB\u52A0\u540E\uFF0Credis\u4E2D\u7684key\u4E3Aspring:session:myproject
+      #添加后，redis中的key为spring:session:myproject
       namespace: myproject
 
 server:
