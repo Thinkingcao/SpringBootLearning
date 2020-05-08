@@ -28,13 +28,15 @@ spring:
 
   ##工作流activiti配置
   activiti:
-    #自动检查、部署流程定义文件，，检查resuorces->processes下是否有流程定义文件，没有则false
+    #自动检查、部署流程定义文件，检查resuorces->processes下是否有流程定义文件，没有则false(默认是true)
     check-process-definitions: true
-    #自动更新数据库表结构
+    #自动更新数据库表结构(默认是true)
     database-schema-update: true
+    # 检测身份信息表是否存在
+    db-identity-used: false
     #流程定义文件的存放目录前缀(默认目录是resource下的processes目录,在自定义目录存放的情况下可配置此属性指定)
     process-definition-location-prefix: classpath:/processes/
-    #流程定义文件的存放目录后缀
+    #流程定义文件的存放目录后缀，默认支持**.bpmn20.xml和**.bpmn格式
     #process-definition-location-suffixes:
 
 
