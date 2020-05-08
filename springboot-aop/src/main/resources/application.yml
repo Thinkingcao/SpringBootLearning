@@ -1,0 +1,25 @@
+server:
+  port: 8787
+
+logging:
+  level:
+    com.thinkingcao : debug
+
+###外部磁盘文件
+#spring:
+#  mvc:
+#    #访问路径： 127.0.0.1:8787/images/aa.jpg
+#    static-path-pattern: /images/**
+#  resources:
+#    #资源存放的磁盘位置
+#    static-locations: file:D://Images//壁纸/
+
+
+###自定义静态资源映射
+#spring:
+#  mvc:
+     #资源访问路径
+#    static-path-pattern: /static/**
+#  resources:
+     #外部资源存放的磁盘位置
+#    static-locations: classpath:/static/img/
