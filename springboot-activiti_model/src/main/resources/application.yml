@@ -2,7 +2,6 @@
 server:
   port: 9999
 
-
 spring:
   ##数据源配置
   datasource:
@@ -32,15 +31,15 @@ spring:
     check-process-definitions: true
     #自动更新数据库表结构
     database-schema-update: true
+    #database-schema-update: drop-create
     #流程定义文件的存放目录前缀(默认目录是resource下的processes目录,在自定义目录存放的情况下可配置此属性指定)
     process-definition-location-prefix: classpath:/processes/
     #流程定义文件的存放目录后缀
     #process-definition-location-suffixes:
 
+logging:
+  level: 
+   root: INFO
+   org.activiti.engine: INFO
+    
 
-  #页面配置
-  thymeleaf:
-    cache: false # 开发时关闭缓存,不然没法看到实时页面
-    prefix:
-      classpath: /templates   # 访问template下的html文件需要配置模板，映射
-    suffix: .html

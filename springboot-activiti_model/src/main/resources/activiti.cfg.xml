@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- <context:property-placeholder location="db.properties" system-properties-mode="FALLBACK"/> -->
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/springboot-activiti?characterEncoding=UTF-8"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	
+   <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+   		<!-- <property name="jdbcDriver" value="com.mysql.jdbc.Driver"></property>
+   		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/0705activiti"></property>
+   		<property name="jdbcUsername" value="root"></property>
+   		<property name="jdbcPassword" value="123456"></property> -->
+   		<property name="dataSource" ref="dataSource"></property>
+		<!--    		
+		flase： 默认值。activiti在启动时，会对比数据库表中保存的版本，如果没有表或者版本不匹配，将抛出异常。
+		true： activiti会对数据库中所有表进行更新操作。如果表不存在，则自动创建。
+		create_drop： 在activiti启动时创建表，在关闭时删除表（必须手动关闭引擎，才能删除表）。
+		drop-create： 在activiti启动时删除原来的旧表，然后在创建新表（不需要手动关闭引擎）。 -->
+   		<property name="databaseSchemaUpdate" value="true"></property>
+   </bean>
+</beans>
