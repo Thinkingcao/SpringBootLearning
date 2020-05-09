@@ -12,7 +12,7 @@ import java.io.IOException;
  * @date: 2020-05-09 17:53
  */
 @Slf4j
-@WebFilter(filterName= "API接口签名验签过滤器" ,urlPatterns = "/*")
+@WebFilter(filterName= "signAuthFilter" ,urlPatterns = "/*")
 public class SignAuthFilter implements Filter {
 
     @Override
