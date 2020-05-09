@@ -1,33 +1,33 @@
-#######SpringBoot\u672C\u5730\u5F00\u53D1\u73AF\u5883########
-#\u7AEF\u53E3
+#######SpringBoot开发环境########
+#端口
 server:
   port: 8888
   servlet:
     context-path: /springboot-pringLog
 
-#spring\u5E94\u7528\u7A0B\u5E8F\u540D\u79F0
+#spring应用程序名称
 spring:
   application:
     name: springboot-printLog
 
-#\u81EA\u5B9A\u4E49\u9879\u76EE\u52A0\u8F7D\u4FE1\u606F
+#自定义项目加载信息
 app:
   info:
-    #\u7EC4\u540D
+    #组名
     project-group: '@project.parent.groupId@'
-    #\u9879\u76EE\u540D
+    #项目名
     project-name: ${spring.application.name}
-    #\u9879\u76EE\u4F5C\u8005
+    #项目作者
     project-author: Thinkingcao
-    #\u9879\u76EE\u63CF\u8FF0
+    #项目描述
     project-description: '@project.description@'
-    #\u9879\u76EE\u7F16\u7801
+    #项目编码
     project-sourceEncoding: '@project.build.sourceEncoding@'
-    #SpringBoot\u7248\u672C
+    #SpringBoot版本
     project-springboot-version: '@spring-boot.version@'
-    #\u9879\u76EE\u7248\u672C
+    #项目版本
     project-version: '@project.version@'
-    #\u9879\u76EE\u8BBF\u95EE\u4E0A\u4E0B\u6587\u540D\u79F0
+    #项目访问上下文名称
     project-context: ${server.servlet.context-path}
-    #\u535A\u5BA2\u7F51\u7AD9
+    #博客网站
     blog-url: https://thinkingcao.blog.csdn.net/
