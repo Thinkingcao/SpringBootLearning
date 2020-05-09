@@ -1,0 +1,8 @@
+#端口
+server:
+  port: 8080
+
+#激活的环境
+spring:
+  profiles:
+    active: local

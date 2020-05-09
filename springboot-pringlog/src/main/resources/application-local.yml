@@ -1,0 +1,32 @@
+#\u7AEF\u53E3
+server:
+  port: 8888
+  servlet:
+    context-path: /springboot-pringLog
+
+#spring\u5E94\u7528\u7A0B\u5E8F\u540D\u79F0
+spring:
+  application:
+    name: springboot-printLog
+
+#\u81EA\u5B9A\u4E49\u9879\u76EE\u52A0\u8F7D\u4FE1\u606F
+app:
+  info:
+    #\u7EC4\u540D
+    project-group: '@project.parent.groupId@'
+    #\u9879\u76EE\u540D
+    project-name: ${spring.application.name}
+    #\u9879\u76EE\u4F5C\u8005
+    project-author: Thinkingcao
+    #\u9879\u76EE\u63CF\u8FF0
+    project-description: '@project.description@'
+    #\u9879\u76EE\u7F16\u7801
+    project-sourceEncoding: '@project.build.sourceEncoding@'
+    #SpringBoot\u7248\u672C
+    project-springboot-version: '@spring-boot.version@'
+    #\u9879\u76EE\u7248\u672C
+    project-version: '@project.version@'
+    #\u9879\u76EE\u8BBF\u95EE\u4E0A\u4E0B\u6587\u540D\u79F0
+    project-context: ${server.servlet.context-path}
+    #\u535A\u5BA2\u7F51\u7AD9
+    blog-url: https://thinkingcao.blog.csdn.net/
