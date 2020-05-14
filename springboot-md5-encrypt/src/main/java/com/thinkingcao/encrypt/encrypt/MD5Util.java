@@ -14,12 +14,12 @@ public class MD5Util {
      * @param src
      * @return
      */
-    public static String md5(String src) {
-        return DigestUtils.md5Hex(src);
+    public static String md5(String str) {
+        return DigestUtils.md5Hex(str);
     }
-    
+
     //固定盐
-    private static final String salt = "1a2b3c4d";
+    private static final String salt = "30c722c6acc64306a88dd93a814c9f0a";
     
     /**
      * 将用户输入的明文密码与固定盐进行拼装后再进行MD5加密
