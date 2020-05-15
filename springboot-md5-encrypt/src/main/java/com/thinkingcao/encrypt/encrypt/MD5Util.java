@@ -11,7 +11,7 @@ public class MD5Util {
     
     /**
      * 加密方法
-     * @param src
+     * @param str
      * @return
      */
     public static String md5(String str) {
