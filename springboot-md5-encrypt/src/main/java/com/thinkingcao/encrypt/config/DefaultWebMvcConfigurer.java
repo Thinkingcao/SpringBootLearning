@@ -1,15 +1,17 @@
 package com.thinkingcao.encrypt.config;
 
+import com.thinkingcao.encrypt.Inter.PermissionInterceptor;
 import com.thinkingcao.encrypt.fiter.SignAuthFilter;
 import com.thinkingcao.encrypt.listener.SessionListener;
 import com.thinkingcao.encrypt.listener.WebContextListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -21,10 +23,22 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class DefaultWebMvcConfigurer implements WebMvcConfigurer {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    @Autowired
+    private PermissionInterceptor permissionInterceptor;
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(permissionInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("api/user/login"); //排除登录TOken拦截
     }
+
+
+    // @Bean
+    // public PermissionInterceptor permissionInterceptor(){
+    //     return new PermissionInterceptor();
+    // }
+
 
     /**
      * 注册过滤器signAuthFilter bean到Spring容器

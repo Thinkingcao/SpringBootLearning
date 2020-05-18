@@ -35,6 +35,7 @@ public class SignAuthFilter implements Filter {
         String nonce = request.getHeader("nonce");
         String signEcrypt = MD5Util.md5(appId  + Constants.APP_SECRET + timestamp + nonce + new HeadRequest().getVersion());
         if (sign.equalsIgnoreCase(signEcrypt)){
+            log.debug("签名校验通过，放行...........");
             filterChain.doFilter(servletRequest, servletResponse);
         }
     }

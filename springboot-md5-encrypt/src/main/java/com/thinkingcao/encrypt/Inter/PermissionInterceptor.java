@@ -44,6 +44,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
         if (flag){
             return true;
         }
+        //1. 携带的token是否为空
         if (StringUtils.isBlank(token)){
             log.debug("user-token不能为空");
             ServletUtils.renderString(response, JSON.toJSONString(ApiResult.error("")));
