@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @desc:  API请求报文签名sign = timestamp+appId+appKey+nonce+version
+ * @desc:  API请求报文签名sign = timestamp+appId+appSecret+nonce+version
  * @author: cao_wencao
  * @date: 2020-05-18 14:54
  */
@@ -63,12 +63,12 @@ public class SignAuthInterceptor implements HandlerInterceptor {
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
-        // //1.前端穿过来的时间戳与服务器当前时间戳差值大于180，则当前请求的timestamp无效
-        // if (Math.abs(timestamp - System.currentTimeMillis() / 1000) > 180){
-        //     log.debug("timestamp无效...........");
-        //     ServletUtils.renderString(response, JSON.toJSONString(ApiResult.fail("timestamp无效")));
-        //     return false;
-        // }
+        //1.前端传过来的时间戳与服务器当前时间戳差值大于180，则当前请求的timestamp无效
+        if (Math.abs(timestamp - System.currentTimeMillis() / 1000) > 180){
+            log.debug("timestamp无效...........");
+            ServletUtils.renderString(response, JSON.toJSONString(ApiResult.fail("timestamp无效")));
+            return false;
+        }
         //2.通过判断redis中的nonce，确认当前请求是否为重复请求，控制API接口幂等性
         boolean nonceExists = redisUtils.hasKey(nonce);
         if (nonceExists){
