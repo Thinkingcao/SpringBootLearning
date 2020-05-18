@@ -43,20 +43,6 @@ public class DefaultWebMvcConfigurer implements WebMvcConfigurer {
     }
 
 
-    // /**
-    //  * 注册过滤器signAuthFilter bean到Spring容器
-    //  */
-    // @Bean("signAuthFilter")
-    // @Order(0)
-    // public FilterRegistrationBean<SignAuthFilter> signAuthFilter(){
-    //     FilterRegistrationBean<SignAuthFilter> registrationBean = new FilterRegistrationBean<>();
-    //     registrationBean.setFilter(new SignAuthFilter());
-    //     registrationBean.setEnabled(true);
-    //     registrationBean.addUrlPatterns("/*");
-    //     registrationBean.setName("signAuthFilter");
-    //     return registrationBean;
-    // }
-
     /**
      * 注册webListenerDemo bean到Spring容器
      */
