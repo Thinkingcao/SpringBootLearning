@@ -135,6 +135,18 @@ public class ApiResult implements Serializable {
         return new ApiResult(CODE_500, message, null);
     }
 
+
+    /**
+     * 无权限
+     *
+     * @param message the message
+     * @return api result
+     */
+    public static ApiResult fail(String message) {
+        return new ApiResult(CODE_401, message, null);
+    }
+
+
     /**
      * 错误
      *

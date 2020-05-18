@@ -34,8 +34,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
         }
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        //获取token
-        final String token = request.getHeader(Constants.USER_TOKEN);
         //请求URL
         String url = request.getServletPath().toString();
         log.debug("请求的URL: {} ", url);
@@ -44,6 +42,9 @@ public class PermissionInterceptor implements HandlerInterceptor {
         if (flag){
             return true;
         }
+        //获取token
+        final String token = request.getHeader(Constants.USER_TOKEN);
+
         //1. 携带的token是否为空
         if (StringUtils.isBlank(token)){
             log.debug("user-token不能为空");
