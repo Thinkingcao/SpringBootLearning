@@ -1,0 +1,25 @@
+
+#日志配置
+logging:
+  level:
+    org.springframework.web: INFO
+    com.thinkingcao.weixin: DEBUG
+    me.chanjar.weixin: DEBUG
+
+#公众号配置(可支持多公众号配置，即list表示)
+wx:
+  mp:
+    configs:
+      - appId: wx041974352a21ff90
+        secret: 2817d82c4ca63bcf32bc89ca5dd42077
+        token: wechat
+        aesKey: 111 （接口配置里的EncodingAESKey值）
+      - appId: 2222 （另一个公众号的appid，以下同上）
+        secret: 1111
+        token: 111
+        aesKey: 111
+
+#配置项目访问名称
+server:
+  servlet:
+    context-path: /springboot-wechat
