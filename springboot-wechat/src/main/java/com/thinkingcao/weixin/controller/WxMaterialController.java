@@ -26,9 +26,6 @@ import java.io.IOException;
 public class WxMaterialController {
 
     @Autowired
-    private WxMpService wxMpService;
-
-    @Autowired
     private WeChatMaterialUtils materialUtils;
 
     /**
