@@ -2,6 +2,7 @@
 server:
   port: 8025
 
+
 spring:
   application:
     name: springboot-md5
@@ -31,4 +32,9 @@ spring:
 # 路径排除
 project:
   apifilter:
-    excludes: api/user/login,
+    excludes: /api/user/login
+
+# 设置日志级别为debug
+logging:
+  level:
+    com.thinkingcao.encrypt: debug

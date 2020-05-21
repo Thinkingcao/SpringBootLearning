@@ -1,24 +1,15 @@
-package com.thinkingcao.encrypt.result;
+package com.thinkingcao.weixin.result;
+
+
 
 import java.io.Serializable;
 
-
 /**
- * @desc: API 返回结果
- * @author: cao_wencao
- * @date: 2020-05-09 17:53
+ * API 返回结果
+ *
+ * @author wlc
  */
 public class ApiResult implements Serializable {
-
-    //正常
-    public static final int CODE_200 = 200;
-    //无效请求
-    public static final int CODE_400 = 400;
-    //授权失败
-    public static final int CODE_401 = 401;
-    //未知错误
-    public static final int CODE_500 = 500;
-
     /**
      * serialVersionUID
      */
@@ -27,7 +18,7 @@ public class ApiResult implements Serializable {
     /**
      * 消息 200
      */
-    private int code = CODE_500;
+    private int code = 500;
 
     /**
      * 信息
@@ -132,20 +123,8 @@ public class ApiResult implements Serializable {
      * @return api result
      */
     public static ApiResult error(String message) {
-        return new ApiResult(CODE_500, message, null);
+        return new ApiResult(500, message, null);
     }
-
-
-    /**
-     * 无权限
-     *
-     * @param message the message
-     * @return api result
-     */
-    public static ApiResult fail(String message) {
-        return new ApiResult(CODE_401, message, null);
-    }
-
 
     /**
      * 错误
@@ -165,7 +144,7 @@ public class ApiResult implements Serializable {
      * @return api result
      */
     public static ApiResult succee(String message) {
-        return new ApiResult(CODE_200, message);
+        return new ApiResult(200, message);
     }
 
     /**
@@ -176,7 +155,7 @@ public class ApiResult implements Serializable {
      * @return api result
      */
     public static ApiResult succee(Object data, String message) {
-        return new ApiResult(CODE_200, message, data);
+        return new ApiResult(200, message, data);
     }
 
     /**
@@ -187,7 +166,7 @@ public class ApiResult implements Serializable {
      */
     public ApiResult success(Object data) {
 
-        return new ApiResult(CODE_200, null, data);
+        return new ApiResult(200, null, data);
     }
 
 
