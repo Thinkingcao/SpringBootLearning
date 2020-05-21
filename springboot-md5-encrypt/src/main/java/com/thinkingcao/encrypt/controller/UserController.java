@@ -28,6 +28,8 @@ public class UserController {
     @Autowired(required = false)
     private RedisUtils redisUtil;
 
+
+
     @PostMapping(value = "/login")
     public ApiResult login(String username, String passward) {
 
