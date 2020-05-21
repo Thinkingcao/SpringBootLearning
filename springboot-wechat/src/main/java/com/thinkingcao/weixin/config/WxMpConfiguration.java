@@ -41,6 +41,7 @@ public class WxMpConfiguration {
     private final ScanHandler scanHandler;
     private final WxMpProperties properties;
     private final TextMsgHandler textMsgHandler;
+    private final ImgHandler imgHandler;
 
     @Bean
     public WxMpService wxMpService() {
@@ -102,8 +103,11 @@ public class WxMpConfiguration {
         // 扫码事件
         newRouter.rule().async(false).msgType(EVENT).event(EventType.SCAN).handler(this.scanHandler).end();
 
-        // 文本事件处理
+        // 文本消息处理
         newRouter.rule().async(false).msgType(XmlMsgType.TEXT).handler(this.textMsgHandler).end();
+
+        // 图片消息处理
+        newRouter.rule().async(false).msgType(XmlMsgType.IMAGE).handler(this.imgHandler).end();
 
         // 默认
         newRouter.rule().async(false).handler(this.msgHandler).end();

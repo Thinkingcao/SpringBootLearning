@@ -12,28 +12,27 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @desc: 文本累心消息处理-TEXT
- * @link: XmlMsgType.TEXT
+ * @desc:
  * @author: cao_wencao
- * @date: 2020-05-20 15:15
+ * @date: 2020-05-21 14:16
  */
 @Component
-public class TextMsgHandler extends AbstractHandler {
-
+public class ImgHandler extends AbstractHandler{
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage, Map<String, Object> map, WxMpService wxMpService, WxSessionManager wxSessionManager) throws WxErrorException {
-        //判断传递过来的消息，类型是否为TEXT
-        if (wxMessage.getMsgType().equals(WxConsts.XmlMsgType.TEXT)) {
+        // msgType 消息类型
+        String msgType = wxMessage.getMsgType();
+        // content 消息内容
+        String content = wxMessage.getContent();
+        if (msgType.equals(WxConsts.XmlMsgType.IMAGE)){
             //TODO: 如果需要做微信消息日志存储，可以在这里进行日志存储到数据库，这里省略不写。
         }
         // 获取微信用户基本信息
         WxMpUser userWxInfo = wxMpService.getUserService().userInfo(wxMessage.getFromUser(), "zh_CN");
         if (null != userWxInfo){
-            //下面两种响应方式都可以
-            //return new TextBuilder().build("您的一互动，泛起了我内心的涟漪。",wxMessage,wxMpService);
             return WxMpXmlOutMessage
-                    .TEXT()
-                    .content("您的一互动，就激起了我内心的无限可能")
+                    .IMAGE()
+                    .mediaId("1C72rnlYrj7ZqBiRGdKCoS54AXQwSo4iULd9qRhOC-U")
                     .fromUser(wxMessage.getToUser())
                     .toUser(wxMessage.getFromUser())
                     .build();
