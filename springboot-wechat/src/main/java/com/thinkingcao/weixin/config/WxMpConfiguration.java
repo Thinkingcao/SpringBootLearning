@@ -42,6 +42,7 @@ public class WxMpConfiguration {
     private final WxMpProperties properties;
     private final TextMsgHandler textMsgHandler;
     private final ImgHandler imgHandler;
+    private final MaterialNewsHandler materialNewsHandler;
 
     @Bean
     public WxMpService wxMpService() {
@@ -108,6 +109,9 @@ public class WxMpConfiguration {
 
         // 图片消息处理
         newRouter.rule().async(false).msgType(XmlMsgType.IMAGE).handler(this.imgHandler).end();
+
+        // 图文消息处理
+        newRouter.rule().async(false).msgType(XmlMsgType.NEWS).handler(this.materialNewsHandler).end();
 
         // 默认
         newRouter.rule().async(false).handler(this.msgHandler).end();
