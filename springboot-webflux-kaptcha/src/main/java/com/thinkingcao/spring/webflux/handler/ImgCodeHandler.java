@@ -1,7 +1,6 @@
 package com.thinkingcao.spring.webflux.handler;
 
 import com.google.code.kaptcha.Producer;
-import com.thinkingcao.spring.webflux.constant.Constants;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ByteArrayResource;
@@ -31,6 +30,9 @@ import java.util.concurrent.TimeUnit;
 @Component
 @AllArgsConstructor
 public class ImgCodeHandler implements HandlerFunction<ServerResponse> {
+    //随机数code_key
+    public static final String DEFAULT_CODE_KEY = "random_code_";
+
     private final Producer producer;
 
     private final StringRedisTemplate redisTemplate;
@@ -44,7 +46,7 @@ public class ImgCodeHandler implements HandlerFunction<ServerResponse> {
         BufferedImage image = producer.createImage(capStr);
         // 保存验证码信息
         String randomStr = UUID.randomUUID().toString().replaceAll("-", "");
-        redisTemplate.opsForValue().set(Constants.DEFAULT_CODE_KEY + randomStr, code, 60, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(DEFAULT_CODE_KEY + randomStr, code, 60, TimeUnit.SECONDS);
         // 转换流信息写出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
         try {
