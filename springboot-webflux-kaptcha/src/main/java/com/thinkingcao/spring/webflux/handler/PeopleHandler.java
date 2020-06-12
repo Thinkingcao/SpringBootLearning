@@ -8,10 +8,10 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 @Component
-public class CityHandler {
+public class PeopleHandler {
 
-    public Mono<ServerResponse> helloCity(ServerRequest request) {
+    public Mono<ServerResponse> helloPeople(ServerRequest request) {
         return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
-                .body(BodyInserters.fromValue("Hello, City!"));
+                .body(BodyInserters.fromValue("Hello, People!"));
     }
 }

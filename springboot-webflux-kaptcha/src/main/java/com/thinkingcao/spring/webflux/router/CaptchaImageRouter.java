@@ -1,7 +1,8 @@
 package com.thinkingcao.spring.webflux.router;
 
 
-import com.thinkingcao.spring.webflux.handler.ImgCodeHandler;
+import com.thinkingcao.spring.webflux.handler.CaptchaImageHandler;
+import com.thinkingcao.spring.webflux.handler.CheckCaptchaImageHandler;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +19,13 @@ import org.springframework.web.reactive.function.server.ServerResponse;
  */
 @Configuration
 @AllArgsConstructor
-public class ImgCodeRouter {
+public class CaptchaImageRouter {
     @Bean
-    public RouterFunction<ServerResponse> routeFunction(ImgCodeHandler imgCodeHandler){
+    public RouterFunction<ServerResponse> routeFunction(CaptchaImageHandler captchaImageHandler, CheckCaptchaImageHandler checkCaptchaImageHandler){
         return RouterFunctions
                 .route(RequestPredicates.GET("/code")
-                        .and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), imgCodeHandler::handle);
+                        .and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), captchaImageHandler::handle)
+                .andRoute(RequestPredicates.GET("/checkCode").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)),
+                        checkCaptchaImageHandler::handle);
     }
 }

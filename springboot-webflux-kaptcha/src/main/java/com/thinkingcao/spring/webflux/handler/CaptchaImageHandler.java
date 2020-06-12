@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class ImgCodeHandler implements HandlerFunction<ServerResponse> {
+public class CaptchaImageHandler implements HandlerFunction<ServerResponse> {
     //随机数code_key
     public static final String DEFAULT_CODE_KEY = "random_code_";
 
@@ -52,7 +52,7 @@ public class ImgCodeHandler implements HandlerFunction<ServerResponse> {
         try {
             ImageIO.write(image, "jpg", os);
         } catch (IOException e) {
-            log.error("ImageIO write err", e);
+            log.error("ImageIO write error", e);
             return Mono.error(e);
         }
         return ServerResponse.status(HttpStatus.OK)
