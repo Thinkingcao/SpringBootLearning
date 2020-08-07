@@ -1,0 +1,20 @@
+#服务端口
+server:
+  port: 80
+
+#小程序SDK包日志级别配置
+logging:
+  level:
+    org.springframework.web: info
+    com.github.binarywang.demo.wx.miniapp: debug
+    cn.binarywang.wx.miniapp: debug
+
+#微信小程序参数配置
+wx:
+  miniapp:
+    configs:
+      - appid: wx418e02df7c53d635 #微信小程序的appid
+        secret: e971df9a4f19eb56caaf1bfa964b90f3 #微信小程序的Secret
+        token: #微信小程序消息服务器配置的token
+        aesKey: #微信小程序消息服务器配置的EncodingAESKey
+        msgDataFormat: JSON
