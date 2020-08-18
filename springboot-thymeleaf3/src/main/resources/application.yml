@@ -1,0 +1,23 @@
+#服务端口
+server:
+  port: 10900
+
+#Spring相关配置
+spring:
+  thymeleaf:
+    #是否开启模板缓存，默认true
+    cache: false
+    #指定模板的前缀，默认为:classpath:/templates/
+    prefix: classpath:/templates/
+    #指定模板的后缀，默认为:.html
+    suffix: .html
+    #指定模板的模式, 默认为：HTML5 (如果使用了nekohtml依赖 设置为LEGACYHTML5)
+    mode: HTML5
+    #指定模板的编码，默认为: UTF-8
+    encoding: UTF-8
+    #内容类型
+    servlet:
+      content-type: text/html
+    #是否检查模板位置是否存在, 默认为: true
+    check-template-location: true
+

@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ThObject {
     private Long id;
-    private String name;
-    private String value;
+    private String thName;
+    private String desc;
 }
