@@ -6,7 +6,11 @@
 </head>
 <body>
 <p>
-    <span th:fragment="rightPage">右边菜单栏组件</span>
+    <span id="thisPage">这是本页面的内容</span>
 </p>
+
+<div th:include="::#thisPage"></div>
+
+
 </body>
 </html>

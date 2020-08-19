@@ -14,6 +14,24 @@ import java.util.Map;
 public class ThymeleafController {
 
     /**
+     * main
+     * @return
+     */
+    @RequestMapping("/main")
+    public String main() {
+        return "fragments/main";
+    }
+
+    /**
+     * login
+     * @return
+     */
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    /**
      * dashboard面板
      * @return
      */
