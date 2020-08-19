@@ -19,6 +19,7 @@
 <input type="text" th:value="${thValue}" size="35"/>
 
 
+
 <!--th:each 遍历列表，常用，优先级很高，仅此于代码块的插入-->
 <!--th:each 修饰在div上，则div层重复出现，若只想p标签遍历，则修饰在p标签上-->
 <h2 style="color: lightseagreen">3. 遍历列表,语法： th:text="${message}" th:each="message : ${集合对象}" </h2>
@@ -53,6 +54,15 @@
     <p>thName(名称):<span th:text="${thObject.thName}"></span></p>
     <p>desc(描述): <span th:text="${thObject.desc}"></span></p>
 </div>
+
+<!-- th:field 属性-->
+<div>
+    <h2 style="color: lightseagreen">8. 使用th:field 属性，需要th:object先绑定对象，语法： th:field="*{属性字段}" </h2>
+    <div th:object="${thObject}">
+        描述: <input type="text" th:field="*{desc}" size="35">  <br>
+    </div>
+</div>
+
 
 </body>
 </html>
