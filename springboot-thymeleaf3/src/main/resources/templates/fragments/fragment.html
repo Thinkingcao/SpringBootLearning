@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>fragment代码块定义示例</title>
+</head>
+<body>
+<!--th:fragment定义代码块标识-->
+<footer th:fragment="copy">
+    &copy; 2011 The Good Thymes Virtual Grocery
+</footer>
+<!--三种不同的引入方式-->
+<div th:insert="footer :: copy"></div>
+<div th:replace="footer :: copy"></div>
+<div th:include="footer :: copy"></div>
+
+<!--th:insert是在div中插入代码块，即多了一层div-->
+<div>
+    <footer>
+        &copy; 2011 The Good Thymes Virtual Grocery
+    </footer>
+</div>
+
+<!--th:replace是将代码块代替当前div，其html结构和之前一致-->
+<footer>
+    &copy; 2011 The Good Thymes Virtual Grocery
+</footer>
+
+<!--th:include是将代码块footer的内容插入到div中，即少了一层footer-->
+<div>
+    &copy; 2011 The Good Thymes Virtual Grocery
+</div>
+
+</body>
+</html>

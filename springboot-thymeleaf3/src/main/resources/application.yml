@@ -21,3 +21,7 @@ spring:
     #是否检查模板位置是否存在, 默认为: true
     check-template-location: true
 
+  messages:
+    #配置国际化文件路径（resources目录下的i18n）级文件名基础名（sys_en_US:properties的基础名是sys）
+    basename: i18n.sys
+
