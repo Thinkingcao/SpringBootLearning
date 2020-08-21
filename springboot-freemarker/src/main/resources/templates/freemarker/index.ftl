@@ -2,12 +2,18 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>FreeMarker模板引擎</title>
 </head>
 <body>
-FreeMarker模板引擎
-<p>姓名 : <h1>${resource.name}</h1></p>
-<p>网站 : <h1>${resource.website}</h1></p>
-<p>语言 : <h1>${resource.language}</h1></p>
+  <h2>FreeMarker模板引擎简单使用</h2>
+<p><h1>博主名称 : </h1>
+   <strong>${resource.author}</strong>
+</p>
+<p><h1>博客地址 : </h1>
+    <strong> ${resource.blog}</strong>
+</p>
+<p><h1>技术语言 : </h1>
+    <strong>${resource.language}</strong>
+</p>
 </body>
 </html>
