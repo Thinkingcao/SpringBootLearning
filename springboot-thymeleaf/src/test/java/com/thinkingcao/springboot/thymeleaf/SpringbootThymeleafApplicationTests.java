@@ -1,4 +1,4 @@
-package com.thinkingcao.springbootthymeleaf;
+package com.thinkingcao.springboot.thymeleaf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
