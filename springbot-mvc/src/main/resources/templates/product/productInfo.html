@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>productInfo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-  <h2>
-     商品编号： <p th:text="#{productNo}">Welcome to our grocery store!</p>
-  </h2>
-  <h2>
-     商品名称：<p th:text="#{productName}">Welcome to our grocery store!</p>
-  </h2>
+<h2>
+    <p>商品编号productNo : <span th:text="${productNo}"/></p>
+</h2>
+<h2>
+    <p>商品名称productName : <span th:text="${productName}"/></p>
+</h2>
 </body>
 </html>
