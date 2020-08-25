@@ -23,6 +23,11 @@
       "sourceType": "cn.wechat.boot.autoconfigure.properties.WxProperties"
     },
     {
+      "name": "wx.config.is-open",
+      "type": "java.lang.String",
+      "sourceType": "cn.wechat.boot.autoconfigure.properties.WxProperties"
+    },
+    {
       "name": "wx.config.token",
       "type": "java.lang.String",
       "sourceType": "cn.wechat.boot.autoconfigure.properties.WxProperties"
