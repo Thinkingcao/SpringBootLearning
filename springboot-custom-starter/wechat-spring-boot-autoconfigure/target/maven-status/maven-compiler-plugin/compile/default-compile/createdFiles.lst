@@ -1,4 +1,4 @@
-cn\wechat\boot\autoconfigure\config\WxAutoConfiguration.class
 cn\wechat\boot\autoconfigure\service\WxDemoService.class
+cn\wechat\boot\autoconfigure\config\WxAutoConfiguration.class
 cn\wechat\boot\autoconfigure\properties\WxProperties.class
 META-INF\spring-configuration-metadata.json
