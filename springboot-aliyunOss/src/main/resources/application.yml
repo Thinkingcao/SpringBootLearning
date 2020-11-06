@@ -1,0 +1,21 @@
+#端口
+server:
+  port: 8080
+
+#aliyun oss配置
+aliyun:
+  accessKeyId: LTAI4XXXXXXXzqD1saGFZ
+  accessKeySecret: 2WjxNXXXXXXXX4f2bREc
+  bucketName: csp-xxxx
+  endPoint: oss-cn-beijing.aliyuncs.com
+  fileHost: files
+  urlPrefix: http://csp-xxxx.oss-cn-beijing.aliyuncs.com/
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+
+# swagger开关(开发、测试开启，生成关闭)
+swagger:
+  isShow : true
