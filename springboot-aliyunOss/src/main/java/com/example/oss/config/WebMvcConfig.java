@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @desc:
+ * @desc:  拦截器放行Swagger相关访问资源
  * @author: cao_wencao
  * @date: 2020-11-06 16:33
  */

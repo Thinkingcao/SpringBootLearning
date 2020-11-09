@@ -1,11 +1,11 @@
 #端口
 server:
-  port: 8080
+  port: 17790
 
 #aliyun oss配置
 aliyun:
-  accessKeyId: LTAI4XXXXXXXzqD1saGFZ
-  accessKeySecret: 2WjxNXXXXXXXX4f2bREc
+  accessKeyId: LTAI4XXXXXXXzqD1saFQS
+  accessKeySecret: 2WjxNXXXXXXXX4f2bGNl
   bucketName: csp-xxxx
   endPoint: oss-cn-beijing.aliyuncs.com
   fileHost: files
