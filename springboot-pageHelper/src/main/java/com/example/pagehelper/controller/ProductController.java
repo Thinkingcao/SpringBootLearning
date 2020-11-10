@@ -24,11 +24,12 @@ public class ProductController {
 
     /**
      * 根据pid查询单个商品信息
+     * http://127.0.0.1:8082/openApi/product/findProductByPid/1
      * @param pid
      * @return
      */
-    @RequestMapping(value = "/{pid}", method = RequestMethod.POST)
-    public Product product(@PathVariable("pid") Integer pid) {
+    @RequestMapping(value = "findProductByPid/{pid}", method = RequestMethod.POST)
+    public Product findProductByPid(@PathVariable("pid") Integer pid) {
         log.info("接下来要进行{}号商品信息的查询", pid);
         Product product = productService.findByPid(pid);
         log.info("商品信息查询成功,内容为{}", JSON.toJSONString(product));
@@ -37,6 +38,7 @@ public class ProductController {
 
     /**
      * 查询所有商品信息
+     * http://127.0.0.1:8082/openApi/product/findAllProduct
      * @return
      */
     @RequestMapping(value = "/findAllProduct", method = RequestMethod.GET)
@@ -46,6 +48,11 @@ public class ProductController {
         return products;
     }
 
+    /**
+     * 新增商品信息
+     * http://127.0.0.1:8082/openApi/product/insertProduct
+     * @param product
+     */
     @RequestMapping(value = "/insertProduct", method = RequestMethod.POST)
     public void insertProduct(@RequestBody Product product){
         log.info("接下来要新增商品信息: {} ", product);
