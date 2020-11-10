@@ -1,0 +1,23 @@
+#port端口配置
+server:
+  port: 8082
+#spring相关配置
+spring:
+  #服务名
+  application:
+    name: product-service
+  #数据源配置，需要预先创建shop-product数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///my-product?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 123456
+  #JPA持久层框架配置
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
