@@ -29,3 +29,8 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
+#log日志，配置SQL语句打印
+logging:
+  level:
+    com.example.pagehelper.mapper: debug
+    org.springframework: warn
