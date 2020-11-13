@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper2.OrderMapper2">
+
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.Order">
+        <!--@Table t_order-->
+        <result property="oid" column="oid" jdbcType="INTEGER"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="pid" column="pid" jdbcType="INTEGER"/>
+        <result property="pname" column="pname" jdbcType="VARCHAR"/>
+        <result property="pprice" column="pprice" jdbcType="NUMERIC"/>
+        <result property="uid" column="uid" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 查询所有-->
+    <select id="getAllOrder" resultType="com.example.springboot.entity.Order">
+        select
+            oid, number, pid, pname, pprice, uid, username
+        from t_order
+    </select>
+
+<!--
+
+    &lt;!&ndash;查询单个&ndash;&gt;
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          oid, number, pid, pname, pprice, uid, username
+        from t_order
+        where oid = #{oid}
+    </select>
+
+    &lt;!&ndash;查询指定行数据&ndash;&gt;
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          oid, number, pid, pname, pprice, uid, username
+        from t_order
+        limit #{offset}, #{limit}
+    </select>
+
+    &lt;!&ndash;通过实体作为筛选条件查询&ndash;&gt;
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          oid, number, pid, pname, pprice, uid, username
+        from t_order
+        <where>
+            <if test="oid != null">
+                and oid = #{oid}
+            </if>
+            <if test="number != null">
+                and number = #{number}
+            </if>
+            <if test="pid != null">
+                and pid = #{pid}
+            </if>
+            <if test="pname != null and pname != ''">
+                and pname = #{pname}
+            </if>
+            <if test="pprice != null">
+                and pprice = #{pprice}
+            </if>
+            <if test="uid != null">
+                and uid = #{uid}
+            </if>
+            <if test="username != null and username != ''">
+                and username = #{username}
+            </if>
+        </where>
+    </select>
+
+    &lt;!&ndash;新增所有列&ndash;&gt;
+    <insert id="insert" keyProperty="oid" useGeneratedKeys="true">
+        insert into t_order(number, pid, pname, pprice, uid, username)
+        values (#{number}, #{pid}, #{pname}, #{pprice}, #{uid}, #{username})
+    </insert>
+
+    &lt;!&ndash;通过主键修改数据&ndash;&gt;
+    <update id="update">
+        update t_order
+        <set>
+            <if test="number != null">
+                number = #{number},
+            </if>
+            <if test="pid != null">
+                pid = #{pid},
+            </if>
+            <if test="pname != null and pname != ''">
+                pname = #{pname},
+            </if>
+            <if test="pprice != null">
+                pprice = #{pprice},
+            </if>
+            <if test="uid != null">
+                uid = #{uid},
+            </if>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+        </set>
+        where oid = #{oid}
+    </update>
+
+    &lt;!&ndash;通过主键删除&ndash;&gt;
+    <delete id="deleteById">
+        delete from t_order where oid = #{oid}
+    </delete>
+-->
+
+</mapper>
