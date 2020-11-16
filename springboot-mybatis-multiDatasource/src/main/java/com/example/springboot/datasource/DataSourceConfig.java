@@ -2,7 +2,6 @@ package com.example.springboot.datasource;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +37,7 @@ public class DataSourceConfig {
     @Bean(name = "slave")
     @Qualifier("slave")
     @ConfigurationProperties(prefix = "spring.datasource.slave")
-    @ConditionalOnProperty(prefix = "spring.datasource.slave", name = "enabled", havingValue = "true")
+    //@ConditionalOnProperty(prefix = "spring.datasource.slave", name = "enabled", havingValue = "true")
     public DataSource slaveDatasource() {
         return DruidDataSourceBuilder.create().build();
     }
