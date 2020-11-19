@@ -1,0 +1,10 @@
+#服务端口
+server:
+  port: 8899
+
+#minio配置
+minio:
+  endpoint: http://192.168.72.133:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: dev_bucket
