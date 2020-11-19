@@ -1,4 +1,4 @@
-package com.example.minio.utils;
+package com.example.minio.config;
 
 import com.example.minio.properties.MinIoProperties;
 import io.minio.MinioClient;
@@ -14,6 +14,7 @@ import java.io.InputStream;
 
 /**
  * http://docs.minio.org.cn/docs/master/java-client-api-reference
+ * https://www.jianshu.com/p/7f493105b2b2
  * @desc: 构建MinIo工具类
  * @author: cao_wencao
  * @date: 2020-11-19 17:16
@@ -30,6 +31,9 @@ public class MinIoUtils {
     @Autowired
     private MinIoProperties minIoProperties;
 
+    /**
+     * 初始化MinioClient
+     */
     public MinIoUtils(MinIoProperties minIoProperties) {
         if (!StringUtils.hasText(minIoProperties.getBucketName())) {
             throw new RuntimeException("bucket name can not be empty or null");
