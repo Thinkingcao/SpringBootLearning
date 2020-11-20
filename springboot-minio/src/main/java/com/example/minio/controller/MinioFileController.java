@@ -31,7 +31,7 @@ public class MinioFileController {
 
     /**
      * 创建资源桶
-     * @param bucketName
+     * @param bucketName bucket名称
      * @return
      */
     @GetMapping(value = "/createBucket")
@@ -48,6 +48,7 @@ public class MinioFileController {
      * @desc: 上传图片
      * @auth: cao_wencao
      * @date: 2020/11/19 22:22
+     * @param file 文件名
      */
     @PostMapping(value = "uploadImg")
     public RestResponse uploadImage(@RequestParam("file") MultipartFile file) throws Exception {
@@ -78,6 +79,13 @@ public class MinioFileController {
         }
     }
 
+    /**
+     * 获取文件资源的URL链接
+     * http://127.0.0.1:8899/removeImg?objectName=images/2020-11-20/1605857319982.png
+     *      * 注意: minio存放的文件是多级目录形式时，objectName=images/2020-11-20/1605857319982.png , bucket = bucket(顶级文件夹名称)
+     * @param objectName
+     * @return
+     */
     @RequestMapping("/getObjectURL")
     public RestResponse getObjectURL(String objectName){
         String url = minIoUtils.buildObjectUrl(objectName);
@@ -85,6 +93,8 @@ public class MinioFileController {
     }
 
     /**
+     * http://127.0.0.1:8899/removeImg?objectName=images/2020-11-20/1605857319982.png
+     * 注意: minio存放的文件是多级目录形式时，objectName=images/2020-11-20/1605857319982.png , bucket = bucket(顶级文件夹名称)
      * 删除文件
      * @param objectName
      * @return
@@ -100,6 +110,7 @@ public class MinioFileController {
 
 
     /**
+     * http://127.0.0.1:8899/downloadImage?objectName=images/2020-11-20/1605857319982.png
      * 下载文件到本地
      * @param objectName
      * @param response
@@ -152,13 +163,14 @@ public class MinioFileController {
 
 
     /**
+     * http://127.0.0.1:8899/preViewPicture?objectName=images/2020-11-20/1605857319982.png
      * 在浏览器预览图片
      * @param objectName
      * @param response
      * @throws Exception
      */
-    @RequestMapping("/preViewPicture/{objectName}")
-    public void download1Image(@RequestParam("objectName") String objectName, HttpServletResponse response) throws Exception{
+    @RequestMapping("/preViewPicture")
+    public void preViewPicture(@RequestParam("objectName") String objectName, HttpServletResponse response) throws Exception{
         response.setContentType("image/jpeg");
         ServletOutputStream out = null;
         try {
