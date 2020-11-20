@@ -4,7 +4,7 @@ server:
 
 #minio配置
 minio:
-  endpoint: http://192.168.72.133:9000
+  endpoint: http://192.168.15.135:9000
   accessKey: minioadmin
   secretKey: minioadmin
-  bucketName: dev_bucket
+  bucketName: dev
