@@ -64,8 +64,8 @@ public class RateLimiterAspect {
             if(currentCount >= maxCount) {
                 //如果拿到的结果是一个数字，并且这个数字还大于 count，那就说明已经超过流量限制了，那么直接返回查询的结果即可
                 redisTemplate.expire(rateLimitCombineKey,lockTime,TimeUnit.SECONDS);
+                //当前请求达到限流次数上限后,这里直接抛出异常,全局异常处理器GlobalException会接管输出JSON格式给客户端
                 throw new RateLimiterException("访问过于频繁，请稍候再试");
-                //return;
             }
             else if (value != null || !(Long.parseLong(value) >= maxCount)){
                 Long newValue = redisTemplate.opsForValue().increment(rateLimitCombineKey,COUNT_STEP);
@@ -86,6 +86,7 @@ public class RateLimiterAspect {
      * @return
      */
     public String getCombineKey(RateLimiter rateLimiter, JoinPoint point ,String rateLimitKey) {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
         Class<?> targetClass = method.getDeclaringClass();
@@ -94,14 +95,18 @@ public class RateLimiterAspect {
             String ipAddr = IpUtils.getIpAddr(((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest());
             rateLimitKey = String.format(rateLimitKey,ipAddr,requestMethodPath);
         }
-        if (rateLimiter.limitType() == RateLimiterEnum.USERID){
-            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+        else if (rateLimiter.limitType() == RateLimiterEnum.USERID){
             String userId = request.getParameter("userId");
             rateLimitKey = String.format(rateLimitKey,userId,requestMethodPath);
         }
-        if (rateLimiter.limitType() == RateLimiterEnum.DEFAULT) {
+        else if (rateLimiter.limitType() == RateLimiterEnum.DEFAULT) {
             rateLimitKey = String.format(rateLimitKey,"",requestMethodPath).replace(":", "");
         }
+        else if (rateLimiter.limitType() == RateLimiterEnum.MOBILE){
+            String mobile = request.getParameter("mobile");
+            rateLimitKey = String.format(rateLimitKey,mobile,requestMethodPath);
+        }
+
         return rateLimitKey;
     }
 

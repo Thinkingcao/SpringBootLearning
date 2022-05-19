@@ -18,7 +18,12 @@ public enum RateLimiterEnum {
     IP,
 
     /**
-     * userID
+     * 根据请求在userID进行限流
      */
-    USERID
+    USERID,
+
+    /**
+     * 根据请求在MOBILE进行限流
+     */
+    MOBILE
 }
