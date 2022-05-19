@@ -1,0 +1,12 @@
+# 应用服务WEB访问端口
+server:
+    port: 8080
+
+# 应用名称
+spring:
+    application:
+        name: springboot-redis-rateimiter
+    redis:
+        host: 127.0.0.1
+        port: 6379
+
